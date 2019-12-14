@@ -62,10 +62,13 @@ function process_elem!(f::NanoFactory, start=:FUEL)
     end
 end
 
-function restart!(f::NanoFactory)
+function restart!(f::NanoFactory, remove_residuals=false)
     for elem in values(f.elements)
         elem.is_ready = false
         elem.required = 0
+        if remove_residuals
+            elem.residue = 0
+        end
     end
 end
 
@@ -100,3 +103,30 @@ end
 
 nanofactory = NanoFactory(readlines("input.txt"))
 println("Part 2: ", calc_fuel(nanofactory, 1000000000000))
+
+##################### PART 2 Alternative Solution #############
+
+function find_fuel(f::NanoFactory, ore)
+    restart!(f, true)
+    process_elem!(f, 1)
+    fuel_min = div(ore, f.elements[:ORE].required)
+    fuel_max = 2*fuel_min
+    while fuel_max - fuel_min > 1
+        fuel_new = div(fuel_min + fuel_max, 2)
+        restart!(f, true)
+        process_elem!(f, fuel_new)
+        ore_new = f.elements[:ORE].required
+        if ore_new < ore
+            fuel_min = fuel_new
+        elseif ore_new > ore
+            fuel_max = fuel_new
+        else
+            return fuel_new
+        end
+    end
+    
+    return fuel_min
+end
+
+nanofactory = NanoFactory(readlines("input.txt"))
+find_fuel(nanofactory, 1000000000000)
