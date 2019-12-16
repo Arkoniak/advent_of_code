@@ -145,6 +145,7 @@ mutable struct Board
     paddle::Tuple{Int, Int}
     score::Int
     chars::Dict{Int, Char}
+    turn::Int
 end
 
 function Board(inp::Vector{Int})
@@ -177,19 +178,20 @@ function Board(inp::Vector{Int})
     end
     canvas = map(x -> chars[x], canvas)
 
-    Board((tlx, tly), canvas, ball, paddle, 0, chars)
+    Board((tlx, tly), canvas, ball, paddle, 0, chars, 0)
 end
 
 height(b::Board) = size(b.canvas)[1]
 
 function draw(b::Board)
-  println("Score: ", b.score)
+  println("Score: ", b.score, " Turn: ", b.turn)
   for i in 1:height(b)
       println(join(b.canvas[i, :]))
   end
 end
 
 function update!(b::Board, inp::Vector{Int})
+    b.turn += 1
     for i in 0:(div(length(inp), 3) - 1)
       v = inp[3*i + 3]
       coord = (inp[3*i + 2] - b.tl[2] + 1, inp[3*i + 1] - b.tl[1] + 1)
