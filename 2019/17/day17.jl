@@ -228,3 +228,13 @@ print(join(Char.(out)))
 out = run(vm, [Int('n'), 10])
 
 println("Part 2: ", out[end])
+
+####### Update ######
+# Amazing solution from https://www.reddit.com/r/adventofcode/comments/ebr7dg/2019_day_17_solutions/fb7ymcw/
+
+m = match(r"^(.{1,21})\1*(.{1,21})(?:\1|\2)*(.{1,21})(?:\1|\2|\3)*$", path * ",")
+res = replace(replace(replace(s, m[1] => "A"), m[2] => "B"), m[3] => "C")
+res1 = [Int.(collect(res)); 10]
+a1 = [Int.(collect(m[1])[1:(end-1)]); 10]
+b1 = [Int.(collect(m[2])[1:(end-1)]); 10]
+c1 = [Int.(collect(m[3])[1:(end-1)]); 10]
