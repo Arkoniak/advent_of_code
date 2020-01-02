@@ -16,7 +16,7 @@ end
 
 str2prog(s) = parse.(Int, split(s, ","))
 
-Prog(s::String) = Prog(vcat(str2prog(s), zeros(Int, 10000)), 1, [], [], 0, 0, false)
+Prog(s::String; mem = 10000, ascii = false) = Prog(vcat(str2prog(s), zeros(Int, mem)), 1, [], [], 0, 0, ascii)
 
 copy_code(p::Prog) = Prog(copy(p.code), 1, [], [], 0, 0)
 
