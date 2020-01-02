@@ -8,9 +8,9 @@ In each directory there are following files:
 
 - input.txt - input for the corresponding day (if available). I keep them so code can be run, but you should remove them, so AoC wouldn't be spoiled. Be honest to yoursef!
 
-- test##.txt - sometimes, it was necessary to make test files, during solution development.
+- test##.txt - sometimes it was necessary to make test files, during solution development.
 
-- ## experiments.ipynb - jupyter notebook, where I did all experiments during solution development. Can be rather unstructured, should be ignored most of the time.
+- experiments.ipynb - jupyter notebooks where I did all experiments during solution development. Can be rather unstructured, should be ignored most of the time.
 
 Also, there are two additional directories. 
 
