@@ -37,9 +37,9 @@ function add_element!(elements, s)
     end
 end
 
-function process_elem!(f::NanoFactory, start=:FUEL)
+function process_elem!(f::NanoFactory, quantity = 1, start=:FUEL)
     stack = Vector{Symbol}()
-    f.elements[start].required = 1
+    f.elements[start].required = quantity
     f.elements[start].is_ready = true
     f.elements[start].residue = 0
     push!(stack, start)
@@ -74,14 +74,18 @@ end
 
 function update_ore!(f::NanoFactory, elem = :FUEL)
     restart!(f)
-    process_elem!(f, elem)
+    process_elem!(f, 1, elem)
     total_ore = isempty(f.ore_cnt) ? 0 : f.ore_cnt[end]
     push!(f.ore_cnt, f.elements[:ORE].required + total_ore)
 end
 
-nanofactory = NanoFactory(readlines("input.txt"))
-update_ore!(nanofactory)
-println("Part 1: ", nanofactory.ore_cnt[end])
+function part1()
+    nanofactory = NanoFactory(readlines("input.txt"))
+    update_ore!(nanofactory)
+    println("Part 1: ", nanofactory.ore_cnt[end])
+end
+
+part1()
 
 ####################### PART 2 ##################################
 
@@ -101,8 +105,12 @@ function calc_fuel(f::NanoFactory, ore)
     fuel
 end
 
-nanofactory = NanoFactory(readlines("input.txt"))
-println("Part 2: ", calc_fuel(nanofactory, 1000000000000))
+function part2()
+    nanofactory = NanoFactory(readlines("input.txt"))
+    println("Part 2: ", calc_fuel(nanofactory, 1000000000000))
+end
+
+#= part2() =#
 
 ##################### PART 2 Alternative Solution #############
 
@@ -128,5 +136,9 @@ function find_fuel(f::NanoFactory, ore)
     return fuel_min
 end
 
-nanofactory = NanoFactory(readlines("input.txt"))
-find_fuel(nanofactory, 1000000000000)
+function part2alt()
+    nanofactory = NanoFactory(readlines("input.txt"))
+    println("Part 2 alternative: ", find_fuel(nanofactory, 1000000000000))
+end
+
+part2alt()

@@ -1,3 +1,5 @@
+#######################
+# Part 1
 struct FFTIter
     n::Int
     seq::Vector{Int}
@@ -50,6 +52,10 @@ function part1()
 		println("Part 1: ", join(res[1:8]))
 end
 
+part1()
+
+##################################
+# Part 2
 function part2()
     s = readline("input.txt")
     offset = parse(Int, s[1:7])
@@ -67,5 +73,4 @@ function part2()
     println("Part 2: ", join(data)[1:8])
 end
 
-part1()
 part2()

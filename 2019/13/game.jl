@@ -233,17 +233,6 @@ function play()
     sleep(sleep_time)
     feed(prog, [sign(-board.paddle[2] + board.ball[2])])
 
-    #= c = getc1() =#
-    #= if c == 'h' =#
-    #=   feed(prog, [-1]) =#
-    #= elseif c == 'j' =#
-    #=   feed(prog, [0]) =#
-    #= elseif c == 'k' =#
-    #=   feed(prog, [1]) =#
-    #= elseif c == 'q' =#
-    #=   break =#
-    #= end =#
-
     bx = run(prog)
     clear(prog)
     update!(board, bx)
