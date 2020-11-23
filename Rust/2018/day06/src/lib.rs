@@ -53,13 +53,18 @@ pub fn run(config: Config){
     }
 }
 
-fn preprocess(contents: String) -> Vec<(usize, usize)> {
+fn preprocess(contents: String) -> Vec<(i64, i64)> {
     let ll = contents.lines();
 
+    let mut res = Vec::new();
     for line in ll {
+        let sids: Vec<&str> = line.split(",").collect();
+        let x: i64 = sids[0].trim().parse().unwrap();
+        let y: i64 = sids[1].trim().parse().unwrap();
+        res.push((x, y));
     }
 
-    [(1, 1)].to_vec()
+    res
 }
 
 pub struct Grid<T> {
@@ -71,16 +76,16 @@ pub struct Grid<T> {
 }
 
 impl<T: Copy> Grid<T> {
-    pub fn new(w: usize, h: usize, ox: i64, oy: i64, default: T) -> Self {
+    pub fn new(w: i64, h: i64, ox: i64, oy: i64, default: T) -> Self {
         // let buffer: Vec<T> = unsafe {
         //     vec![std::mem::zeroed(); w*h]
         // };
         Grid {
-            v: vec![default; w*h],
+            v: vec![default; usize::try_from(w*h).unwrap()],
             ox: ox,
             oy: oy,
-            width: w,
-            height: h,
+            width: usize::try_from(w).unwrap(),
+            height: usize::try_from(h).unwrap(),
         }
     }
 
@@ -165,5 +170,8 @@ mod tests {
     fn test_preprocess() {
         let s = String::from("83, 153");
         assert_eq!(preprocess(s), [(83, 153)].to_vec());
+
+        let contents = fs::read_to_string("input_test.txt").unwrap();
+        assert_eq!(preprocess(contents), [(1, 1), (1, 6), (8, 3), (3, 4), (5, 5), (8, 9)]);
     }
 }
