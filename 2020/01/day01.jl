@@ -5,9 +5,9 @@ using Underscores
 get_data(filename) = @_ readlines(filename) |> parse.(Int, __)
 
 function part1(data)
-    sort!(data)
+    # sort!(data)
     set = Set(data)
-    for num in data
+    @inbounds for num in data
         if 2020 - num in set
             return (true, num*(2020 - num))
             break
@@ -38,7 +38,7 @@ function part2(data)
     set = Set(data)
     n1, n2, n3 = 0, 0, 0
     found = false
-    for i in eachindex(data)
+    @inbounds for i in eachindex(data)
         n1 = data[i]
         j = i + 1
         while true
@@ -82,11 +82,11 @@ data = get_data("input.txt");
 #  3.651 μs (7 allocations: 5.07 KiB)
 
 function naive_part1(data)
+    set = Set(data)
+    # sort!(data)
     for x in data
-        for y in data
-            if x + y == 2020
-                return true
-            end
+        if 2020 - x in set
+            return true
         end
     end
 
