@@ -23,10 +23,11 @@ function part(data, k)
         Take(1) |>
         Map(x -> prod(x[2]) * (2020 - sum(x[2])))
 
-    res = @_ data |> tr |> collect |> first
+    res = @_ data |> tr |> tcollect |> first
 end
 
 data = get_data("input.txt");
+# N.B. : change tcollect to collect in `part` to get numbers below
 
 @btime part(d, 2) setup=(d = copy($data)) evals = 1
 # 2.507 μs (34 allocations: 2.02 KiB)
@@ -38,6 +39,7 @@ data = get_data("input.txt");
 part(data, 2)
 part(data, 3)
 part(data, 4)
+part(data, 6)
 
 ########################################
 # Misc

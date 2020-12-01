@@ -192,19 +192,69 @@ histogram(res, legend = :topleft)
 ########################################
 # Quadruplet
 ########################################
+function gen(rng, n, k)
+    while true
+        n0 = n
+        res = Int[]
+        found = true
+        for i in 1:k - 1
+            k0 = rand(rng, 1:n0 - 1)
+            if k0 < 100
+                break
+            end
+            push!(res, k0)
+            n0 = n0 - k0
+            if n0 == 1 && i < k - 1
+                found = false
+                break
+            end
+        end
+        if found
+            push!(res, n - sum(res))
+            if length(unique(res)) == k && res[end] > 100
+                return res
+            end
+        end
+    end
+end
 function genset4(rng, n, l)
     while true
         x1 = gen(rng, n, 3)
         x2 = gen(rng, n, 2)
         x3 = gen(rng, n, 4)
-        x = union(x1, x2, x4)
+        x = union(x1, x2, x3)
         !validate2(x, n) | !validate3(x, n) | !validate4(x, n) && continue
-        y = setdiff(1:2020, x)
+        y = setdiff(1:n, x)
         for z in x
             v = n - z
             idx = searchsortedfirst(y, v)
             if idx <= length(y) && y[idx] == v
                 deleteat!(y, idx)
+            end
+        end
+        for i1 in 1:length(x)
+            for i2 in i1+1:length(x)
+                v1 = x[i1]
+                v2 = x[i2]
+                v = n - (v1 + v2)
+                idx = searchsortedfirst(y, v)
+                if idx <= length(y) && y[idx] == v
+                    deleteat!(y, idx)
+                end
+            end
+        end
+        for i1 in 1:length(x)
+            for i2 in i1+1:length(x)
+                for i3 in i2+1:length(x)
+                    v1 = x[i1]
+                    v2 = x[i2]
+                    v3 = x[i3]
+                    v = n - (v1 + v2 + v3)
+                    idx = searchsortedfirst(y, v)
+                    if idx <= length(y) && y[idx] == v
+                        deleteat!(y, idx)
+                    end
+                end
             end
         end
         found = true
@@ -262,9 +312,20 @@ function genseq4(rng, n, l, k)
     return res
 end
 
-rng = StableRNG(2021)
-res = genseq4(rng, 2020, 200, 1000)
+rng = StableRNG(2020)
+res = genseq4(rng, 2020, 200, 10000);
 
+histogram(res, legend = :topleft)
+
+rng = StableRNG(2020)
+res = genset4(rng, 2020, 9);
+res
+
+rng = StableRNG(2020)
+res = genset4(rng, 10000, 100);
+
+rng = StableRNG(2020)
+res = genseq4(rng, 10000, 500, 10000);
 histogram(res, legend = :topleft)
 
 ########################################
@@ -302,8 +363,29 @@ function find_2020_triplet2(data)
     end
 end
 
+function find_2020_triplet3(data)
+    sort!(data)
+    lookup = falses(data[end])
+    @inbounds for x in data
+        lookup[x] = true
+    end
+    up = 2020 - data[1]
+    n = length(data)
+    @inbounds for i in eachindex(data)
+        for j in i+1:n
+            x = data[i]
+            y = data[j]
+            x + y > up && break
+            lookup[2020 - x - y] && return x * y * (2020 - x - y)
+        end
+    end
+end
+
 data = get_data("input.txt")
 @btime find_2020_triplet(d) setup=(d = copy($data)) evals = 1
 @btime find_2020_triplet($data)
 
 @btime find_2020_triplet2(d) setup=(d = copy($data)) evals = 1
+# 1.700 μs (0 allocations: 0 bytes)
+@btime find_2020_triplet3(d) setup=(d = copy($data)) evals = 1
+# 1.370 μs (2 allocations: 368 bytes)
