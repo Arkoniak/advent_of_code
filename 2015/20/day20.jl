@@ -87,21 +87,17 @@ find_least_house(29000000)
 ################################
 # Part 2
 
-function find_least2(x)
-    house = 1
+function part2(num)
+    res = Int[]
+    elf = 1
     while true
-        res = 1
-        for (k, v) in factor(house)
-            res2 = 0
-            for i in 0:v
-                res2 += 50*k^i >= x ? k^i : 0
-            end
-                res *= (k^(v+1) - 1) ÷ (k - 1)
+        append!(res, zeros(Int, 50))
+        for i in 1:50
+            res[elf*i] += 11*elf
         end
-        if res*11 >= x
-            return house
-        else
-            house += 1
-        end
+        res[elf] >= num && return elf
+        elf += 1
     end
 end
+
+part2(29000000)
