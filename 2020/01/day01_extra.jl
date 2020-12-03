@@ -389,3 +389,21 @@ data = get_data("input.txt")
 # 1.700 μs (0 allocations: 0 bytes)
 @btime find_2020_triplet3(d) setup=(d = copy($data)) evals = 1
 # 1.370 μs (2 allocations: 368 bytes)
+
+@btime find_2020_triplet3($data)
+
+function part2(input)
+    input = sort(input)
+    for a in input
+        for b in @view input[2:end]
+            c = 2020 - a - b
+            idx = searchsortedfirst(input, c)
+            input[idx] == c && (@debug a, b, c; return a * b * c)
+        end
+    end
+end
+
+@btime part2($data)
+########################################
+# 
+########################################
