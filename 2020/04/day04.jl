@@ -90,11 +90,7 @@ println("Part 1: ", parse1(input).answer)
 
 isnumber(s) = count(x -> x in '0':'9', s) == length(s)
 kdigits(s, k) = isnumber(s) & (length(s) == k)
-function isyear(s, y1, y2)
-    kdigits(s, 4) || return false
-    val = parse(Int, s)
-    y1 <= val <= y2
-end
+isyear(s, y1, y2) = tryparse(Int, s) |> x -> isnothing(x) ? false : y1 <= x <= y2
 
 function isheight(s)
     length(s) < 4 && return false
@@ -124,18 +120,13 @@ actions2 = Dict(
            valid &= val in ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]
        elseif fld == "pid"
            @set! s.pid += 1
-           valid &= kdigits(val, 9)
+           valid &= !isnothing(match(r"^\d{9}$", val))
        elseif fld == "eyr"
            @set! s.eyr += 1
            valid &= isyear(val, 2020, 2030)
        elseif fld == "hcl"
            @set! s.hcl += 1
-           if length(val) != 7
-               valid = false
-           else
-               cnt1 = count(x -> x in ['0':'9'..., 'a':'f'...], val[2:end])
-               valid &= (val[1] == '#') & (cnt1 == 6)
-           end
+           valid &= !isnothing(match(r"^#[a-f0-9]{6}$", val))
        elseif fld == "byr"
            @set! s.byr += 1
            valid &= isyear(val, 1920, 2002)
@@ -186,3 +177,6 @@ parse2(input)
 
 input = read("input.txt");
 println("Part 2: ", parse2(input).answer)
+
+using BenchmarkTools
+@btime parse2($input);
