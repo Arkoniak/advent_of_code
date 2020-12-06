@@ -2,8 +2,8 @@ using ReTest
 using Underscores
 
 # Part 1
-seatid(s) = reduce((x, y) -> (x << 1) | ((y == 'R') | (y == 'B')), s; init = 0)
-println("Part 1: ", mapreduce(seatid, max, eachline("input.txt")))
+    seatid(s) = reduce((x, y) -> (x << 1) | ((y == 'R') | (y == 'B')), s; init = 0)
+    println("Part 1: ", mapreduce(seatid, max, eachline("input.txt")))
 
 seatid(s) = @_ reduce((_1 << 1) | ((_2 == 'R') | (_2 == 'B')), s; init = 0)
 
