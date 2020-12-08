@@ -1,0 +1,14 @@
+name = "AOC2020"
+uuid = "c45b13d1-0882-4070-aa0b-73484fceed74"
+authors = ["Andrey Oskin <skoffer@arkoniak.com>"]
+version = "0.1.0"
+
+[deps]
+Setfield = "efcf1570-3423-57d1-acb7-fd33fddbac46"
+UnPack = "3a884ed6-31ef-47d7-9d2a-63182c4928ed"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

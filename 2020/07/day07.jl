@@ -20,13 +20,13 @@ function build_graph(filename)
         if !haskey(mg.metaindex[:bag], bag)
             add_vertex!(mg, :bag, bag)
         end
-        for m in match.(r"(\d)+ (.*) bag.*", split(bags, ","))
+        for m in match.(r"(?<num>\d)+ (?<bag>.*) bag[^,]*", split(bags, ","))
             isnothing(m) && continue
-            if !haskey(mg.metaindex[:bag], m[2])
-                add_vertex!(mg, :bag, m[2])
+            if !haskey(mg.metaindex[:bag], m[:bag])
+                add_vertex!(mg, :bag, m[:bag])
             end
-            edge = Edge(mg[bag], mg[m[2]])
-            add_edge!(mg, edge, parse(Int, m[1]))
+            edge = Edge(mg[bag], mg[m[:bag]])
+            add_edge!(mg, edge, parse(Int, m[:num]))
         end
     end
     
