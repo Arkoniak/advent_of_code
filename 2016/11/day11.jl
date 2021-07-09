@@ -57,8 +57,11 @@ function isvalid(state)
     return true
 end
 
-function process!(memo, states, state, n)
-    isvalid(state) || return
+function process!(memo, states, validated, state, n)
+    if !haskey(validated, state)
+        validated[state] = isvalid(state)
+    end
+    validated[state] || return
     get(memo, state, n+1) > n || return
     memo[state] = n
     push!(states, state)
@@ -68,6 +71,7 @@ end
 function part1(state0, statef)
     memo = Dict(statef => 0)
     states = [statef]
+    validated = Dict(statef => true)
 
     while !isempty(states)
         state = popfirst!(states)
@@ -80,7 +84,7 @@ function part1(state0, statef)
                 state[i] == state[end] || continue
                 state1 = @set state[end] += delta
                 state1 = @set state1[i] += delta
-                process!(memo, states, state1, n)
+                process!(memo, states, validated, state1, n)
             end
             # 2 items
             for i in 1:k-1
@@ -90,7 +94,7 @@ function part1(state0, statef)
                     state1 = @set state[end] += delta
                     state1 = @set state1[i] += delta
                     state1 = @set state1[j] += delta
-                    process!(memo, states, state1, n)
+                    process!(memo, states, validated, state1, n)
                 end
             end
         end
