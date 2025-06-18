@@ -1,2 +1,4 @@
 .ipynb_checkpoints
 input.txt
+.zig-cache/
+zig-out/

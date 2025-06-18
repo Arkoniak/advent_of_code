@@ -1,0 +1,5831 @@
+# callgrind format
+version: 1
+creator: callgrind-3.25.0
+pid: 160027
+cmd:  ./05-1 ../input.txt
+part: 1
+
+
+desc: I1 cache: 
+desc: D1 cache: 
+desc: LL cache: 
+
+desc: Timerange: Basic block 0 - 9061918
+desc: Trigger: Program termination
+
+positions: line
+events: Ir
+summary: 47512390
+
+
+ob=(1) /home/skoffer/Projects/advent_of_code/2024/05/src/05-1
+fl=(28) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/Progress.zig
+fn=(434) Progress.unlockStdErr
+583 228
++1 228
+cfi=(29) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/Thread/Mutex/Recursive.zig
+cfn=(436) Thread.Mutex.Recursive.unlock
+calls=114 63 
+* 17898
+* 228
+
+fn=(382) Progress.lockStdErr
+578 684
++1 228
+cfi=(29)
+cfn=(384) Thread.Mutex.Recursive.lock
+calls=114 49 
+* 24301
+* 114
++1 114
+cfn=(404) Progress.clearWrittenWithEscapeCodes
+calls=114 702 
+* 1368
+* 684
+
+fn=(404)
+702 456
++1 912
+
+fl=(7) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/posix.zig
+fn=(426) posix.write
+1235 8430
++1 1686
++30 562
+-30 562
+0 2248
+1272 2810
+cfi=(8) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/os/linux.zig
+cfn=(428) os.linux.write
+calls=562 -98 
+* 17422
+* 2810
++1 562
+cfn=(32) posix.errno__anon_9566
+calls=562 249 
+* 18546
+* 3372
+0 562
+1273 1124
+0 1686
+1274 5058
+
+fn=(24) posix.getrlimit
+7214 12
++3 15
++1 1
+cfi=(8)
+cfn=(26) os.linux.getrlimit
+calls=1 2439 
+* 50
+* 3
+cfn=(32)
+calls=1 249 
+* 33
+* 4
+0 2
+7219 14
+
+fn=(78) posix.toPosixPath
+7599 4
+cfi=(14) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/compiler_rt/stack_probe.zig
+cfn=(76) __zig_probe_stack
+calls=1 49 
+* 19
+* 14
++1 3
+cfi=(10) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/mem.zig
+cfn=(80) mem.indexOfScalar__anon_8297
+calls=1 1247 
+* 542
+* 5
+cfi=(6) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/debug.zig
+cfn=(20) debug.assert
+calls=1 553 
+* 16
++1 4
+cfi=(4) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/compiler_rt/memset.zig
+cfn=(12) memset
+calls=1 12 
+* 241
+* 11
++2 3
+0 1
+7604 5
+-1 1
+0 1
+7604 6
+0 1
+7604 4
+0 5
+7604 3
+0 3
+7604 12
+0 3
+7604 1
+cfi=(5) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/compiler_rt/memcpy.zig
+cfn=(14) memcpy
+calls=1 37 
+* 22
+* 1
++1 2
+-1 1
+0 1
+7605 1
++1 6
+cfi=(5)
+cfn=(14)
+calls=1 37 
+* 375
+* 4
+cfi=(5)
+cfn=(14)
+calls=1 37 
+* 375
+* 4
+-1 1
+
+fn=(542) posix.exit
+759 5
++11 2
+cfi=(8)
+cfn=(544) os.linux.exit_group
+calls=1 1377 
+* 8
+
+fn=(368) posix.mremap
+4875 100
++1 4
+cfi=(8)
+cfn=(370) os.linux.mremap
+calls=4 966 
+* 168
+* 16
++5 4
+cfn=(32)
+calls=4 249 
+* 132
+* 8
++1 8
+0 4
+4882 8
+0 4
+4882 16
+0 8
+4882 28
+0 4
+4882 28
+0 16
+4882 52
+
+fn=(536) posix.close
+267 5
++8 1
+cfi=(8)
+cfn=(538) os.linux.close
+calls=1 1321 
+* 21
+* 3
+cfn=(32)
+calls=1 -26 
+* 33
+* 5
+0 1
+275 2
++3 3
+
+fn=(32)
+249 94728
++4 15788
++1 31576
+0 31576
+254 15788
++1 31576
+0 15788
+254 47364
+0 15788
+254 110516
+0 15788
+255 31576
+0 15788
+255 47364
+
+fn=(88) posix.openatZ
+1815 14
+0 5
+1824 1
+cfi=(8)
+cfn=(90) os.linux.openat
+calls=1 1306 
+* 37
+* 5
++1 1
+cfn=(32)
+calls=1 249 
+* 33
+* 6
+0 1
+1825 2
+0 1
+1826 2
+0 3
+1826 7
+
+fn=(124) posix.read
+826 228135
++1 45627
++31 15209
+-31 15209
+0 60836
+864 76045
+cfi=(8)
+cfn=(126) os.linux.read
+calls=15209 1021 
+* 486688
+* 76045
++1 15209
+cfn=(32)
+calls=15209 249 
+* 501897
+* 91254
+0 15209
+865 30418
+0 45627
+866 136881
+
+fn=(42) posix.sigemptyset
+5832 10
++8 4
+cfi=(8)
+cfn=(44) os.linux.sigemptyset
+calls=2 1822 
+* 14
+* 14
+
+fn=(48) posix.sigaction
+5875 40
++1 10
+cfi=(8)
+cfn=(50) os.linux.sigaction
+calls=5 1753 
+* 1646
+* 15
+cfn=(32)
+calls=5 249 
+* 165
+* 20
++1 15
+
+fn=(518) posix.munmap
+4852 12
++1 2
+cfi=(8)
+cfn=(520) os.linux.munmap
+calls=2 992 
+* 52
+* 6
+cfn=(32)
+calls=2 249 
+* 66
+* 8
++1 6
+
+fn=(230) posix.mmap
+4817 52
++2 6
+cfi=(8)
+cfn=(232) os.linux.mmap
+calls=2 926 
+* 90
+* 8
++5 2
+cfn=(32)
+calls=2 249 
+* 66
+* 4
++1 4
+0 2
+4825 4
+0 2
+4825 8
+0 4
+4825 14
+0 2
+4825 14
+0 8
+4825 26
+
+fn=(34) posix.setrlimit
+7228 8
++3 1
+cfi=(8)
+cfn=(36) os.linux.setrlimit
+calls=1 2444 
+* 50
+* 3
+cfn=(32)
+calls=1 249 
+* 33
+* 6
+0 1
+7231 2
++1 4
+
+fl=(35) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/builtin.zig
+fn=(510) builtin.returnError
+1158 8
++3 4
++1 10
++2 14
+0 2
+1163 14
+
+fl=(5)
+fn=(14)
+37 272085
++18 181390
++18 100540
++1 28064
++1 27684
++1 55368
++1 27684
+-77 27684
+92 80850
++94 5235
++2 1745
++1 1745
+-19 13960
+0 3870
+186 108714
++2 36238
++1 36238
+-19 289904
+0 72476
+170 77360
+-62 77360
++1 77360
++33 38680
++2 193400
+0 38676
+144 38680
+0 4
+144 8
+0 4
+144 4
++1 4
+-1 4
++1 4
+-1 4
++1 4
+-1 4
++1 4
+-1 4
++1 4
+-1 4
++1 4
+-1 4
++1 4
+-1 4
++1 4
++1 4
+-2 68
++1 56
+-1 56
++1 56
+-1 56
++1 56
+-1 56
++1 56
+-1 56
++1 56
+-1 56
++1 56
+-1 56
++1 56
+-1 56
++1 56
++1 56
+-2 386968
+0 38680
+144 38680
++1 38680
+-1 160341
++1 44301
+-1 132903
++26 77360
+0 116040
+
+fl=(24) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/mem/Allocator.zig
+fn=(212) mem.Allocator.alignedAlloc__anon_21836
+994 130
+245 39
++3 52
++8 13
++1 39
+cfn=(214) mem.Allocator.allocWithSizeAndAlignment__anon_22530
+calls=13 1158 
+* 20976
+* 39
+0 26
+245 26
+0 13
+257 39
++1 65
+0 13
+258 91
+0 26
+258 91
+0 39
+245 117
+
+fn=(214)
+1158 169
+268 39
+cfi=(23) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/math.zig
+cfn=(216) math.mul__anon_14589
+calls=13 3372 
+* 377
+* 26
+0 39
+268 13
++1 39
+cfn=(218) mem.Allocator.allocBytesWithAlignment__anon_10366
+calls=13 1258 
+* 20092
+* 26
+-1 39
+0 26
+269 91
+
+fn=(464) mem.Allocator.alignedAlloc__anon_24930
+994 1890
+245 567
++3 756
++8 189
++1 567
+cfn=(466) mem.Allocator.allocWithSizeAndAlignment__anon_25066
+calls=189 1158 
+* 111773
+* 567
+0 378
+245 378
+0 189
+257 567
++1 945
+0 189
+258 1323
+0 378
+258 1323
+0 567
+245 1701
+
+fn=(468) mem.Allocator.allocBytesWithAlignment__anon_23733
+1258 2646
+278 567
+0 567
+283 378
+128 1323
++1 945
+cfi=(15) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/heap/arena_allocator.zig
+cfn=(220) heap.arena_allocator.ArenaAllocator.alloc
+calls=189 +56 
+* 75863
+* 378
+280 189
+0 567
+283 378
++1 945
+0 378
+283 378
+0 378
+283 189
+0 189
+284 1323
+0 756
+284 378
+cfi=(4)
+cfn=(12)
+calls=189 12 
+* 4536
+* 2457
++1 567
+-1 189
+0 567
+285 1890
+
+fn=(350) mem.Allocator.free__anon_18428
+422 154
++2 11
+cfi=(10)
+cfn=(352) mem.sliceAsBytes__anon_20392
+calls=11 34383 
+* 561
+* 66
+0 11
+425 55
+0 11
+425 11
++1 33
+0 22
+427 22
++1 55
+-2 11
+0 11
+428 77
+0 44
+428 22
+cfi=(4)
+cfn=(12)
+calls=11 12 
+* 1596
+* 132
++1 99
+-1 11
+0 11
+429 77
+0 33
+429 88
+cfi=(10)
+cfn=(354) mem.Alignment.fromByteUnits
+calls=11 36 
+* 825
+* 55
+146 99
++1 55
+cfi=(15)
+cfn=(356) heap.arena_allocator.ArenaAllocator.free
+calls=11 253 
+* 858
+* 11
+429 44
+
+fn=(218)
+1258 182
+278 39
+0 39
+283 26
+128 91
++1 65
+cfi=(15)
+cfn=(220)
+calls=13 +56 
+* 16086
+* 26
+280 13
+0 39
+283 26
++1 65
+0 26
+283 26
+0 26
+283 13
+0 13
+284 91
+0 52
+284 26
+cfi=(4)
+cfn=(12)
+calls=13 12 
+* 2732
+* 169
++1 39
+-1 13
+0 39
+285 130
+
+fn=(462) mem.Allocator.remap__anon_24927
+1590 3402
+339 567
+0 189
+343 378
+-2 189
+0 378
+344 756
+
+fn=(470) mem.Allocator.free__anon_24933
+422 2646
++2 189
+cfi=(10)
+cfn=(472) mem.sliceAsBytes__anon_25061
+calls=189 34383 
+* 5103
+* 1134
+0 189
+425 945
+0 189
+425 189
++1 945
+
+fn=(466)
+1158 2457
+268 567
+cfi=(23)
+cfn=(216)
+calls=189 3372 
+* 5481
+* 378
+0 567
+268 189
++1 567
+cfn=(468)
+calls=189 1258 
+* 98921
+* 378
+-1 567
+0 378
+269 1323
+
+fl=(15)
+fn=(486) heap.arena_allocator.ArenaAllocator.queryCapacity
+80 756
++1 189
++1 567
++7 756
+-6 1890
+-83 189
+83 189
++3 378
++1 1512
+-4 189
+-83 189
+83 567
+-83 378
+87 945
+-87 189
+87 189
++1 189
+
+fn=(92) heap.arena_allocator.ArenaAllocator.init
+47 12
++1 6
+cfn=(94) heap.arena_allocator.ArenaAllocator.State.promote
+calls=2 -27 
+* 26
+-48 4
+48 22
+
+fn=(224) heap.arena_allocator.ArenaAllocator.createNode
+172 18
++1 10
+0 4
+173 2
++1 10
+0 2
+174 2
++1 14
+0 4
+175 6
++1 8
+fi=(24)
+-48 14
++1 10
+cfi=(25) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/heap/PageAllocator.zig
+cfn=(226) heap.PageAllocator.alloc
+calls=2 -13 
+* 1416
+* 4
+0 4
+fe=(15)
+177 2
++1 6
+0 4
+176 4
+0 4
+176 2
+0 6
+178 4
++1 6
++1 10
+cfi=(26) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/SinglyLinkedList.zig
+cfn=(244) SinglyLinkedList.prepend
+calls=2 -97 
+* 30
+* 2
++1 4
++1 6
+-4 2
+
+fn=(484) heap.arena_allocator.ArenaAllocator.reset
+102 1512
++18 945
+0 189
+120 567
+0 378
+120 378
+0 378
+120 189
++5 567
+0 189
+121 378
+cfn=(486)
+calls=189 -41 
+* 9261
+* 378
+0 189
+131 945
+-2 189
+0 378
+131 189
++2 378
++1 189
+0 378
+143 189
++1 567
+-10 756
+0 189
+134 189
++2 567
++1 378
+0 378
+137 189
+0 378
+144 378
+cfi=(6)
+cfn=(20)
+calls=189 553 
+* 3024
+* 189
++2 378
++1 378
+0 189
+144 378
+0 189
+144 945
+0 378
+147 189
++1 378
++2 756
++1 378
+0 189
+152 567
+
+fn=(96) heap.arena_allocator.ArenaAllocator.allocator
+29 10
++1 12
+
+fn=(356)
+253 176
++4 33
+0 11
+257 22
++2 44
+-2 11
+0 11
+259 11
++1 22
++1 99
+0 22
+259 11
+0 11
+261 77
+0 33
+261 33
++2 55
+-2 11
++3 33
+0 22
+263 55
+0 22
+263 22
++1 11
+
+fn=(94)
+21 6
++1 20
+
+fn=(220)
+185 2626
++1 606
+0 404
+186 404
++3 606
+cfi=(10)
+cfn=(222) mem.Alignment.toByteUnits
+calls=202 32 
+* 3030
+* 808
++1 810
+-4 202
+0 202
+193 404
+0 200
+190 800
+0 4
+193 14
+0 4
+193 2
+0 6
+193 6
+cfn=(224)
+calls=2 -21 
+* 1620
+* 6
+0 4
+193 2
++2 2130
++20 11
+0 213
+195 1491
+0 426
+195 1704
++1 1704
+-1 213
+0 213
+196 1278
+0 213
+196 852
+0 639
+196 1491
++1 1065
+-1 213
+0 639
+197 213
++1 213
+cfi=(10)
+cfn=(202) mem.alignForward__anon_9037
+calls=213 35133 
+* 44091
+* 639
++1 1491
+0 426
+199 1065
+0 426
+199 213
++1 1065
+0 426
+200 213
++2 437
+0 11
+208 55
+0 404
+203 1414
++2 11
+0 606
+203 1212
+0 404
+203 606
+0 606
+203 606
++1 404
++1 606
+-2 202
+0 44
+208 33
++1 44
+fi=(24)
+-75 99
++1 66
+cfi=(25)
+cfn=(336) heap.PageAllocator.resize
+calls=11 -12 
+* 6223
+* 22
+fe=(15)
++80 11
+0 11
+209 22
+0 11
+210 33
+
+fn=(512) heap.arena_allocator.ArenaAllocator.deinit
+51 24
++3 6
++8 6
+-7 18
++7 2
+-62 2
+55 2
++2 6
++1 4
++1 16
++3 4
+-62 2
+59 14
+-59 6
+59 8
++1 6
+fi=(24)
++86 16
++1 10
+cfi=(25)
+cfn=(514) heap.PageAllocator.free
+calls=2 -10 
+* 736
+* 2
+fe=(15)
+-88 2
+-59 2
+61 2
++1 2
+
+fl=(3) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/os/linux/x86_64.zig
+fn=(392) os.linux.x86_64.syscall0
+19 5
++1 4
+
+fn=(372) os.linux.x86_64.syscall5
+69 64
++1 16
+
+fn=(234) os.linux.x86_64.syscall6
+90 34
++1 8
+
+fn=(540) os.linux.x86_64.syscall1
+27 7
++1 4
+
+fn=(128) os.linux.x86_64.syscall3
+46 205023
++1 63084
+
+fn=(30) os.linux.x86_64.syscall4
+57 120
++1 32
+
+fn=(522) os.linux.x86_64.syscall2
+36 20
++1 8
+
+fl=(11) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/valgrind.zig
+fn=(68) valgrind.doClientRequest
+5 28
++5 18
++2 10
+
+fn=(66) valgrind.doClientRequestExpr
+142 20
++1 8
+cfn=(68)
+calls=2 5 
+* 56
+* 6
+
+fn=(64) valgrind.runningOnValgrind
+154 6
++1 18
+cfn=(66)
+calls=2 -13 
+* 90
+* 6
+
+fl=(27) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/hash/wyhash.zig
+fn=(268) hash.wyhash.Wyhash.update
+37 579792
++1 362370
+-38 108711
+38 36237
++2 217422
+-40 72474
+40 72474
+-40 72474
+41 362370
+-41 72474
+41 108711
+-41 72474
+41 217422
+-41 108711
+41 434844
+-41 108711
+41 36237
+cfi=(5)
+cfn=(14)
+calls=36237 -4 
+* 797214
+* 36237
++1 362370
+-1 36237
+-41 72474
+42 36237
++1 108711
+
+fn=(270) hash.wyhash.Wyhash.final
+68 135352
++1 154688
+-69 19336
+69 116016
+-69 19336
+69 77344
+-69 38672
+69 116016
++1 19336
++25 19336
++2 38672
++1 38672
++1 116016
++1 154688
+cfi=(4)
+cfn=(12)
+calls=19336 -88 
+* 870120
+* 328712
+cfi=(4)
+cfn=(12)
+calls=19336 -88 
+* 483400
+* 212696
+-4 58008
+-27 19336
+-69 19336
+70 58008
+cfi=(5)
+cfn=(14)
+calls=19336 -33 
+* 936802
+* 19336
++2 38672
+-72 19336
+171 38672
++1 96680
++1 96680
++1 58008
+-37 38672
++1 96680
++1 19336
++1 38672
+0 19336
+73 96680
++33 116016
++1 77344
+cfi=(6)
+cfn=(20)
+calls=19336 553 
+* 309376
+* 19336
++2 38672
+-36 19336
++46 19336
+0 19336
+110 96680
+0 38672
+110 58008
++1 77344
++1 174024
+0 19336
+112 116016
+0 19336
+112 77344
+0 58008
+131 116016
++1 19336
+cfi=(6)
+cfn=(20)
+calls=19336 553 
+* 309376
++2 135352
+-22 19336
+0 38672
+112 174024
+0 19336
+fi=(10)
+1817 38672
++1 58008
++1 19336
+fe=(27)
+134 19336
+0 19336
+134 58008
+0 38672
+112 116016
+0 38672
+112 58008
+0 58008
+131 116016
++1 19336
+cfi=(6)
+cfn=(20)
+calls=19336 553 
+* 309376
++2 135352
+-22 19336
+0 77344
+112 38672
++1 193360
+0 19336
+fi=(10)
+1817 38672
++1 58008
++1 19336
+fe=(27)
+134 19336
+0 19336
+134 58008
+0 38672
+113 116016
+0 38672
+113 58008
+0 58008
+131 116016
++1 19336
+cfi=(6)
+cfn=(20)
+calls=19336 553 
+* 309376
++2 135352
+-21 19336
+0 58008
+113 154688
+0 19336
+fi=(10)
+1817 38672
++1 58008
++1 19336
+fe=(27)
+134 19336
+0 19336
+134 58008
+0 38672
+113 135352
+0 38672
+113 116016
+0 38672
+113 58008
+0 58008
+131 116016
++1 19336
+cfi=(6)
+cfn=(20)
+calls=19336 553 
+* 309376
++2 135352
+-21 19336
+0 58008
+113 58008
+0 19336
+fi=(10)
+1817 38672
++1 58008
++1 19336
+fe=(27)
+134 19336
+0 19336
+134 58008
+0 19336
+91 58008
++84 154688
+-32 38672
++1 19336
++1 38672
+-8 58008
++1 96680
++1 19336
++1 38672
+0 38672
+175 19336
+-28 77344
+
+fn=(264) hash.wyhash.Wyhash.init
+19 135352
++1 96680
++9 77344
+143 58008
++1 19336
++1 38672
+-8 58008
++1 96680
++1 19336
++1 38672
+0 77344
+29 38672
++1 38672
++1 38672
++1 77344
+cfi=(5)
+cfn=(14)
+calls=19336 +5 
+* 908792
+* 77344
+147 77344
+
+fl=(14)
+fn=(76)
+49 43
+
+fl=(9) /home/skoffer/Projects/advent_of_code/2024/05/src/05-1.zig
+fn=(374) 05-1.Graph.contains
+72 87339
++1 62385
+cfi=(17) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/hash_map.zig
+cfn=(376) hash_map.HashMap(struct { u32, u32 },void,05-1.Context,80).contains
+calls=12477 406 
+* 18410205
+* 37431
+
+fn=(102) 05-1.Graph.init
+51 7
++2 2
+cfi=(17)
+cfn=(104) hash_map.HashMap(struct { u32, u32 },void,05-1.Context,80).init
+calls=1 170 
+* 15
+* 2
++3 2
+cfi=(17)
+cfn=(106) hash_map.HashMap(u32,void,05-1.KeyContext,80).init
+calls=1 170 
+* 15
+* 1
++2 3
+cfi=(5)
+cfn=(14)
+calls=1 -21 
+* 22
+* 5
+cfi=(5)
+cfn=(14)
+calls=1 -21 
+* 22
+* 4
+
+fn=(154) 05-1.get_val
+40 65897
++1 10138
+-41 15207
+41 15207
+cfi=(22) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/fmt.zig
+cfn=(156) fmt.parseInt__anon_24042
+calls=5069 9552 
+* 2955227
+* 15207
+-41 20276
+41 5069
+-41 10138
+41 40552
+
+fn=(482) 05-1.validateLine
+128 2457
++1 189
+0 111
+141 333
+0 1776
+129 7215
+0 1587
+139 4761
+0 3330
+129 6660
++1 8325
++9 111
+0 1665
+130 3330
++9 1587
+0 14062
+131 43773
++7 12397
+0 12475
+132 49900
++6 13984
+0 49900
+132 24950
++1 24950
+cfn=(374)
+calls=12475 -61 
+* 18593122
+* 37347
+-1 12475
++5 74382
+0 78
+135 12631
+0 12397
+137 12397
++1 12397
+
+fn=(56) 05-1.main
+166 4
++2 4
+0 5
+168 2
++1 2
+cfi=(12) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/fs.zig
+cfn=(72) fs.cwd
+calls=1 +61 
+* 7
+* 9
+cfi=(13) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/fs/Dir.zig
+cfn=(74) fs.Dir.openFile
+calls=1 802 
+* 2793
+* 3
+-1 7
+0 2
+168 2
+cfi=(10)
+cfn=(58) mem.span__anon_23914
+calls=1 5697 
+* 338
+* 8
+0 1
+169 2
++3 3
+cfi=(15)
+cfn=(92)
+calls=1 47 
+* 35
+* 9
++2 3
+cfi=(15)
+cfn=(96)
+calls=1 29 
+* 11
+* 1
++9 3
+cfi=(16) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/fs/File.zig
+cfn=(98) fs.File.reader
+calls=1 1586 
+* 7
+* 1
++1 4
+cfn=(100) 05-1.readGraph
+calls=1 -86 
+* 18777825
+* 6
+cfi=(5)
+cfn=(14)
+calls=1 37 
+* 47
+* 1
++3 4
+cfn=(374)
+calls=1 72 
+* 1289
+* 5
+cfi=(6)
+cfn=(378) debug.print__anon_24083
+calls=1 +28 
+* 1248
+* 1
++1 4
+cfn=(374)
+calls=1 72 
+* 2949
+* 5
+cfi=(6)
+cfn=(378)
+calls=1 +27 
+* 1229
+* 1
++2 4
+cfn=(442) 05-1.analyzePages
+calls=1 -42 
+* 28717281
+* 2
+0 1
+190 4
+cfi=(6)
+cfn=(526) debug.print__anon_24142
+calls=1 +25 
+* 1831
+* 1
+-17 2
+cfi=(15)
+cfn=(512)
+calls=1 51 
+* 449
+* 1
+-3 2
+cfi=(16)
+cfn=(534) fs.File.close
+calls=1 +3 
+* 80
+* 4
+
+fn=(332) 05-1.KeyContext.eql
+34 11515
++2 11515
+
+fn=(366) 05-1.Context.eql
+20 1780
++2 1346
+-22 356
+22 1068
+-22 156
+22 1224
+
+fn=(442)
+148 10
++1 4
+cfi=(4)
+cfn=(12)
+calls=1 12 
+* 130
+* 12
++1 3
+cfi=(15)
+cfn=(92)
+calls=1 47 
+* 35
+* 9
++2 3
+cfi=(15)
+cfn=(96)
+calls=1 29 
+* 11
++2 2
+0 1
+163 2
+-12 2
+cfi=(15)
+cfn=(512)
+calls=1 51 
+* 449
+* 3
++12 7
+-8 1140
+fi=(20) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/io.zig
++18 950
+276 760
++2 760
+-1 570
+fe=(9)
+161 189
+0 380
+155 570
+0 760
+fi=(20)
+178 1520
+cfi=(18) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/io/Reader.zig
+cfn=(108) io.Reader.readUntilDelimiterOrEof
+calls=190 -2 
+* 5641506
+* 3230
+0 380
+178 1330
+fe=(9)
+0 190
+155 1140
+0 567
+155 378
++2 1323
+cfn=(446) 05-1.readLine
+calls=189 -42 
+* 3685829
+* 567
++4 190
+0 378
+157 756
++1 378
+cfn=(480) 05-1.analyzeLine
+calls=189 -14 
+* 19065478
+* 456
+0 555
+156 111
++3 555
+cfi=(6)
+cfn=(488) debug.print__anon_24140
+calls=111 +56 
+* 270729
+* 111
++1 555
+-2 333
+0 78
+156 234
+cfi=(15)
+cfn=(484)
+calls=78 -54 
+* 12714
+* 78
+0 222
+160 111
+-4 333
+cfi=(15)
+cfn=(484)
+calls=111 -54 
+* 18093
++5 111
+
+fn=(446)
+115 2079
++1 189
+cfi=(34) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/array_list.zig
+cfn=(448) array_list.ArrayListAligned(u32,null).init
+calls=189 -63 
+* 7938
+0 567
+116 756
++1 945
+cfi=(10)
+cfn=(146) mem.tokenizeAny__anon_24018
+calls=189 17668 
+* 3024
+* 756
+cfi=(5)
+cfn=(14)
+calls=189 -80 
+* 4158
+* 189
+0 378
+123 2646
+0 2906
+118 5812
+cfi=(10)
+cfn=(148) mem.TokenIterator(u8,.any).next
+calls=2906 3041 
+* 1315005
+* 11813
++3 2717
+0 8151
+118 5434
++1 5434
+cfn=(154)
+calls=2717 -79 
+* 1689974
+* 8151
++2 2906
+0 2717
+119 5434
++1 5434
+cfi=(34)
+cfn=(450) array_list.ArrayListAligned(u32,null).append
+calls=2717 260 
+* 579448
+* 8151
++1 2717
+
+fn=(172) 05-1.Graph.put
+66 11760
++1 5880
+cfi=(17)
+cfn=(174) hash_map.HashMap(struct { u32, u32 },void,05-1.Context,80).put
+calls=1176 322 
+* 7093612
+* 3528
+-67 2352
+68 3528
+cfi=(17)
+cfn=(282) hash_map.HashMap(u32,void,05-1.KeyContext,80).put
+calls=1176 322 
+* 2208861
+* 3528
+-68 2352
+69 3528
+cfi=(17)
+cfn=(282)
+calls=1176 322 
+* 2098505
+* 8232
+
+fn=(314) 05-1.KeyContext.hash
+27 26785
++2 2435
+cfi=(27)
+cfn=(264)
+calls=2435 -10 
+* 248370
+* 24350
++1 4870
+cfi=(10)
+cfn=(266) mem.asBytes__anon_25376
+calls=2435 32509 
+* 19480
+* 12175
+cfi=(27)
+cfn=(268)
+calls=2435 +7 
+* 301940
+* 2435
++1 4870
+cfi=(27)
+cfn=(270)
+calls=2435 +37 
+* 1523895
+* 7305
+
+fn=(262) 05-1.Context.hash
+12 185911
++2 16901
+cfi=(27)
+cfn=(264)
+calls=16901 +5 
+* 1723902
+* 169010
++1 33802
+cfi=(10)
+cfn=(266)
+calls=16901 32509 
+* 135208
+* 101406
+cfi=(27)
+cfn=(268)
+calls=16901 +22 
+* 2095724
+* 16901
++1 33802
+cfi=(10)
+cfn=(266)
+calls=16901 32509 
+* 135208
+* 84505
+cfi=(27)
+cfn=(268)
+calls=16901 +21 
+* 2095724
+* 16901
++1 33802
+cfi=(27)
+cfn=(270)
+calls=16901 +51 
+* 10511771
+* 50703
+
+fn=(480)
+144 3591
++1 189
+cfn=(482)
+calls=189 -17 
+* 19057054
+* 456
+0 567
+145 945
+0 111
+145 789
+0 222
+145 555
+0 222
+145 777
+
+fn=(100)
+98 9
++2 4
+cfi=(4)
+cfn=(12)
+calls=1 -88 
+* 130
+0 1
+100 12
++1 2
+cfn=(102)
+calls=1 -50 
+* 100
+* 4
+cfi=(5)
+cfn=(14)
+calls=1 -64 
+* 42
+* 1
++11 5
+cfi=(5)
+cfn=(14)
+calls=1 -75 
+* 47
+* 4
+cfi=(5)
+cfn=(14)
+calls=1 -75 
+* 47
+* 4
+-10 7062
+fi=(20)
++71 5885
+276 4708
++2 4708
+-1 3531
+fe=(9)
+109 1176
+0 2354
+102 3531
+0 4708
+fi=(20)
+178 9416
+cfi=(18)
+cfn=(108)
+calls=1177 -2 
+* 4668028
+* 20009
+0 2354
+178 8239
+fe=(9)
+0 1177
+102 7062
+0 2354
+102 2354
++1 3530
++6 1176
+0 3528
+104 9408
+cfi=(10)
+cfn=(146)
+calls=1176 17668 
+* 18816
+* 4704
+cfi=(5)
+cfn=(14)
+calls=1176 -67 
+* 25872
+* 1176
++1 2352
+cfi=(10)
+cfn=(148)
+calls=1176 3041 
+* 483336
+* 7056
+cfn=(154)
+calls=1176 -65 
+* 731472
+* 3528
+-2 1177
+0 1176
+105 3528
++1 2352
+cfi=(10)
+cfn=(148)
+calls=1176 3041 
+* 516264
+* 7056
+cfn=(154)
+calls=1176 -66 
+* 731472
+* 2352
+0 2352
+106 2352
++2 2352
+cfn=(172)
+calls=1176 -42 
+* 11445666
+* 3528
++1 1176
+
+fl=(20)
+fn=(406) io.getStdErr
+45 912
++1 114
+cfn=(408) io.getStdErrHandle
+calls=114 -13 
+* 570
+* 798
+
+fn=(422) io.GenericWriter(fs.File,error{NoSpaceLeft,DiskQuota,FileTooBig,InputOutput,DeviceBusy,InvalidArgument,AccessDenied,PermissionDenied,BrokenPipe,SystemResources,OperationAborted,NotOpenForWriting,LockViolation,WouldBlock,ConnectionResetByPeer,ProcessNotFound,NoDevice,MessageTooBig,Unexpected},(function 'write')).typeErasedWriteFn
+346 7868
++1 1686
+0 2248
+347 562
++1 1124
+cfi=(16)
+cfn=(424) fs.File.write
+calls=562 1323 
+* 83176
+* 1124
+-1 562
+0 1124
+348 3934
+
+fn=(120) io.GenericReader(fs.File,error{InputOutput,AccessDenied,BrokenPipe,SystemResources,OperationAborted,LockViolation,WouldBlock,ConnectionResetByPeer,ProcessNotFound,Unexpected,IsDir,ConnectionTimedOut,NotOpenForReading,SocketNotConnected,Canceled},(function 'read')).typeErasedReadFn
+285 212926
++1 45627
+0 60836
+286 15209
++1 30418
+cfi=(16)
+cfn=(122) fs.File.read
+calls=15209 1179 
+* 2266141
+* 30418
+-1 15209
+0 30418
+287 106463
+
+fn=(136) io.GenericWriter(*io.fixed_buffer_stream.FixedBufferStream([]u8),error{NoSpaceLeft},(function 'write')).typeErasedWriteFn
+346 193788
++1 41526
+0 55368
+347 13842
++1 41526
+cfi=(19) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/io/fixed_buffer_stream.zig
+cfn=(138) io.fixed_buffer_stream.FixedBufferStream([]u8).write
+calls=13842 61 
+* 2256246
+* 27684
+-1 13842
+0 27684
+348 96894
+
+fn=(408)
+33 228
++9 342
+
+fl=(1) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/start.zig
+fn=(2) start.posixCallMainAndExit
+508 9
++5 3
++1 3
++2 5
++1 2
+0 1
+519 7
++3 6
++2 1
++2 1
++1 1
++1 2
+0 109
+518 869
+0 5
+537 2
++13 3
++16 1
+cfi=(2) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/os/linux/tls.zig
+cfn=(4) os.linux.tls.initStatic
+calls=1 -68 
+* 588
+* 3
++7 1
+cfn=(22) start.expandStackSize
+calls=1 +20 
+* 514
++3 3
++4 2
++4 1
++1 1
++1 6
++1 1
+-50 7
+0 21
+529 126
+0 20
+530 139
+0 19
+530 56
+0 18
+530 53
+-1 81
++7 3
+0 1
+531 6
+0 1
+532 6
+0 1
+533 23
+0 4
+628 5
++1 5
+-42 1
+0 1
+587 6
+0 1
+590 3
+cfi=(7)
+cfn=(542)
+calls=1 759 
+* 15
+0 1
+629 7
+0 4
+629 2
++1 2
++2 2
+cfi=(6)
+cfn=(38) debug.maybeEnableSegfaultHandler
+calls=1 1377 
+* 1611
++1 2
+cfn=(54) start.maybeIgnoreSigpipe
+calls=1 735 
+* 426
++28 2
++14 2
+cfi=(9)
+cfn=(56)
+calls=1 166 
+* 47507542
+* 3
+-46 1
+0 2
+635 1
++57 3
+-17 1
+
+fn=(0) (below main)
+286 4
+cfn=(2)
+calls=1 508 
+* 47512386
+
+fn=(22)
+593 13
++1 1
++31 3
+0 9
+594 36
+0 8
+625 24
+0 18
+594 45
++1 35
++30 8
+0 1
+597 3
++24 8
+0 2
+598 6
+cfi=(6)
+cfn=(20)
+calls=1 -45 
+* 16
+* 1
++3 3
+cfi=(7)
+cfn=(24)
+calls=1 7214 
+* 134
+* 2
+-4 1
+0 3
+604 7
++2 2
+-5 3
++20 1
+0 3
+609 3
+-2 3
+cfi=(7)
+cfn=(34)
+calls=1 7228 
+* 108
+* 4
+
+fn=(54)
+735 5
++1 1
++21 2
++4 2
+cfi=(7)
+cfn=(42)
+calls=1 5832 
+* 21
+* 4
++3 5
+cfi=(7)
+cfn=(48)
+calls=1 5875 
+* 383
+* 3
+
+fl=(18)
+fn=(108)
+176 34175
++1 1367
+cfi=(19)
+cfn=(110) io.fixed_buffer_stream.fixedBufferStream__anon_2940
+calls=1367 641 
+* 16404
+0 1367
+177 5468
++1 6835
+cfi=(19)
+cfn=(112) io.fixed_buffer_stream.FixedBufferStream([]u8).writer
+calls=1367 39 
+* 12303
+* 15037
+cfn=(114) io.Reader.streamUntilDelimiter__anon_24282
+calls=1367 +22 
+* 10111333
+* 4102
+0 2732
+185 1366
+cfi=(19)
+cfn=(142) io.fixed_buffer_stream.FixedBufferStream([]u8).getWritten
+calls=1366 -83 
+* 49176
+* 9562
++1 8196
+-8 1366
+0 1
+178 3
+0 1
+179 2
+cfi=(19)
+cfn=(142)
+calls=1 -77 
+* 36
+* 2
+0 4
+180 10
+0 9562
+186 1366
++1 16392
+-1 1366
+
+fn=(118) io.Reader.read
+9 273762
++1 60836
+cfi=(20)
+cfn=(120)
+calls=15209 285 
+* 2813665
+* 30418
+-10 30418
+10 106463
+
+fn=(114)
+200 19138
++1 2734
+0 1367
+201 4101
++1 8202
+0 15209
+202 60836
+0 13842
+206 41526
+0 15209
+203 45627
+cfn=(116) io.Reader.readByte
+calls=15209 +29 
+* 4425842
+* 45626
+0 1
+203 3
+cfi=(35)
+cfn=(510)
+calls=1 1158 
+* 26
+* 4
+0 15208
+203 45624
++1 44258
+0 13842
+205 27684
+fi=(20)
+315 41526
++24 55368
++2 55368
+-1 41526
+fe=(18)
+204 19306
+0 27684
+205 41526
+0 41526
+fi=(20)
+316 96894
+cfi=(21) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/io/Writer.zig
+cfn=(130) io.Writer.writeByte
+calls=13842 27 
+* 4526334
+* 179946
+0 27684
+316 41526
+0 27684
+316 27684
+fe=(18)
+206 13842
+
+fn=(116)
+232 152090
++1 60836
+cfi=(4)
+cfn=(12)
+calls=15209 12 
+* 288971
+* 167299
++1 45627
+0 45627
+234 45627
+cfn=(118)
+calls=15209 9 
+* 3315562
+* 91254
++1 45626
+0 30416
+236 121664
+0 1
+235 1
+cfi=(35)
+cfn=(510)
+calls=1 1158 
+* 26
+* 15215
+
+fl=(21)
+fn=(134) io.Writer.write
+12 259272
++1 57616
+cfi=(20)
+cfn=(422)
+calls=562 346 
+* 103408
+cfi=(20)
+cfn=(136)
+calls=13842 346 
+* 2768400
+* 28808
+-13 28808
+13 100828
+
+fn=(132) io.Writer.writeAll
+16 172848
++1 28808
++3 57616
+-20 28808
+18 100828
++2 14404
+-1 158444
++1 14404
+-20 28808
+19 86424
+-19 28808
+19 43212
+-19 43212
+19 43212
+cfn=(134)
+calls=14404 -7 
+* 3347140
+* 57616
+-19 14404
+19 72020
+-19 14404
+19 14404
++1 14404
+
+fn=(130)
+27 110736
++1 69210
++1 27684
+cfn=(132)
+calls=13842 -13 
+* 4221810
+* 41526
+-29 13842
+29 41526
+
+fn=(412) io.Writer.print__anon_24327
+23 8
++1 2
+cfi=(22)
+cfn=(414) fmt.format__anon_24517
+calls=2 +64 
+* 1386
+-24 2
+24 4
+-24 2
+24 6
+
+fn=(528) io.Writer.print__anon_24359
+23 4
++1 1
+cfi=(22)
+cfn=(530) fmt.format__anon_24536
+calls=1 +64 
+* 1295
+-24 1
+24 2
+-24 1
+24 3
+
+fn=(490) io.Writer.print__anon_24357
+23 444
++1 111
+cfi=(22)
+cfn=(492) fmt.format__anon_24531
+calls=111 +64 
+* 211233
+-24 111
+24 222
+-24 111
+24 333
+
+fl=(16)
+fn=(98)
+1586 3
++1 4
+
+fn=(122)
+1179 212926
++5 45627
+cfi=(7)
+cfn=(124)
+calls=15209 826 
+* 1840289
+* 30418
+0 30418
+1184 106463
+
+fn=(410) fs.File.writer
+1592 342
++1 456
+
+fn=(534)
+173 2
++4 2
+cfi=(7)
+cfn=(536)
+calls=1 +90 
+* 74
+* 2
+
+fn=(424)
+1323 7868
++5 1686
+cfi=(7)
+cfn=(426)
+calls=562 -93 
+* 67440
+* 1124
+0 1124
+1328 3934
+
+fl=(30) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/Thread.zig
+fn=(386) Thread.getCurrentId
+375 684
++1 342
+cfn=(388) Thread.LinuxThreadImpl.getCurrentId
+calls=342 1164 
+* 5149
+* 684
+
+fn=(388)
+1164 1368
++1 1369
+0 341
+1165 2046
+0 1
+1166 1
+cfi=(8)
+cfn=(390) os.linux.gettid
+calls=1 1745 
+* 15
+* 1
++1 4
++1 3
+
+fl=(2)
+fn=(4)
+498 10
++4 1
+cfn=(6) os.linux.tls.computeAreaDesc
+calls=1 325 
+* 387
++5 2
+0 3
+519 2
++3 1
+cfn=(10) os.linux.tls.prepareArea
+calls=1 -64 
+* 118
+* 3
++1 1
+cfn=(16) os.linux.tls.setThreadPointer
+calls=1 204 
+* 42
+* 3
+fi=(3)
+0 1
+fe=(2)
+507 6
++1 8
+
+fn=(6)
+325 10
++4 1
++1 2
++2 1
++12 4
+0 10
+332 41
+0 9
+338 27
+0 18
+332 45
++1 44
+0 8
+333 23
++5 10
+0 2
+334 3
+0 1
+335 9
++67 1
++1 2
++1 6
++38 2
++1 5
+0 1
+344 1
++1 2
++4 12
++1 3
+0 1
+415 1
++4 19
+0 2
+404 2
++2 2
++1 3
++3 3
++2 1
++30 2
++1 5
+0 2
+443 5
+0 2
+447 2
++1 5
+0 2
+443 1
+0 2
+448 4
+0 1
+412 1
++1 2
++1 3
++1 3
+0 1
+447 2
++1 2
+0 2
+443 1
+
+fn=(10)
+458 12
++5 2
+cfi=(4)
+cfn=(12)
+calls=1 12 
+* 45
+* 1
++3 2
+-14 1
++1 3
+0 2
+466 2
++3 2
++4 2
+-21 1
++1 3
+0 2
+453 2
+0 2
+473 2
++1 2
++1 4
++3 6
+cfi=(5)
+cfn=(14)
+calls=1 37 
+* 11
+* 1
++5 1
+-1 3
+0 2
+453 2
+
+fn=(16)
+204 5
++32 2
+fi=(3)
+36 5
++1 3
+fe=(2)
+237 3
+0 2
+236 1
++1 4
+cfi=(6)
+cfn=(20)
+calls=1 553 
+* 16
+* 1
+
+fl=(23)
+fn=(168) math.add__anon_24591
+3423 81104
+567 30414
++1 40552
+0 20276
+569 81104
+-1 10138
+
+fn=(192) math.ceilPowerOfTwo__anon_20321
+10656 156
+1209 26
++1 13
+cfn=(194) math.ceilPowerOfTwoPromote__anon_21826
+calls=13 10544 
+* 754
+* 104
++1 39
+0 26
+1214 39
+-2 13
+0 39
+1214 91
+
+fn=(198) math.isPowerOfTwo__anon_20324
+1098 78
++1 52
+cfi=(6)
+cfn=(20)
+calls=13 553 
+* 208
+* 13
++1 65
+0 26
+1100 78
+
+fn=(206) math.isPowerOfTwo__anon_14113
+1098 3654
++1 2436
+cfi=(6)
+cfn=(20)
+calls=609 553 
+* 9744
+* 609
++1 3045
+0 1218
+1100 3654
+
+fn=(166) math.cast__anon_24587
+9318 91242
+1056 15207
++7 121656
+
+fn=(162) math.cast__anon_24572
+9318 60828
+1056 10138
++7 70966
+
+fn=(216)
+3372 1818
+559 606
++1 808
+0 404
+561 2020
+-1 202
+
+fn=(194)
+10544 78
+1195 52
+cfi=(6)
+cfn=(20)
+calls=13 553 
+* 208
+* 13
++3 65
+0 13
+1198 117
+0 13
+1198 26
+0 26
+1198 39
+0 13
+1198 91
+
+fn=(170) math.mul__anon_24590
+3372 45621
+559 15207
++1 20276
+0 10138
+561 40552
+-1 5069
+
+fl=(12)
+fn=(72)
+230 3
++6 4
+
+fl=(31) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/Thread/Mutex.zig
+fn=(398) Thread.Mutex.FutexImpl.lock
+152 684
++1 228
+cfn=(400) Thread.Mutex.FutexImpl.tryLock
+calls=114 +4 
+* 5358
+* 456
++1 456
+
+fn=(440) Thread.Mutex.FutexImpl.unlock
+194 684
++8 114
+fi=(32) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/atomic.zig
+23 456
++1 456
+-24 342
+fe=(31)
+202 114
++1 456
+cfi=(6)
+cfn=(20)
+calls=114 553 
+* 1824
+* 114
++2 342
++1 456
+
+fn=(394) Thread.Mutex.lock
+33 684
++1 114
++35 228
++1 114
+cfi=(30)
+cfn=(386)
+calls=114 375 
+* 2280
+* 342
++1 114
+fi=(32)
+-56 342
++1 456
+fe=(31)
++18 342
+-34 114
+74 342
+cfn=(398)
+calls=114 +78 
+* 7182
+* 114
++1 114
+fi=(32)
+-56 456
++1 342
+-20 228
+fe=(31)
+71 342
+-71 114
+71 684
++1 114
++3 114
+
+fn=(400)
+157 570
+fi=(36) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/Target.zig
+1414 114
+fe=(31)
+162 114
++1 114
+fi=(32)
+-70 456
++1 114
++1 114
+-20 456
++1 456
+-76 228
+76 912
+-76 228
+76 114
+-76 114
+fe=(31)
+163 456
+0 114
+fi=(32)
+95 114
++1 570
+fe=(31)
+
+fn=(438) Thread.Mutex.unlock
+39 684
++1 114
++38 228
++1 114
+fi=(32)
+-64 342
++1 456
+fe=(31)
++24 342
+-40 342
+79 114
+cfi=(30)
+cfn=(386)
+calls=114 375 
+* 2280
+* 798
+cfi=(6)
+cfn=(20)
+calls=114 553 
+* 1824
++1 114
+fi=(32)
+-61 456
++1 228
+-20 114
+fe=(31)
+81 342
+cfn=(440)
+calls=114 194 
+* 5358
+* 114
+
+fl=(17)
+fn=(290) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).growIfNeeded
+1294 21168
++1 7052
++1 9408
+0 4
+1296 16
+cfn=(292) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).load
+calls=4 -8 
+* 389
+* 2372
+0 8
+1296 4
+cfn=(296) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).capacityForSize
+calls=4 734 
+* 568
+* 20
+cfn=(298) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).grow
+calls=4 1428 
+* 114614
+* 16
+
+fn=(302) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).initMetadatas
+1282 24
++1 16
+0 8
+1283 12
+cfn=(294) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).capacity
+calls=4 795 
+* 172
+* 28
+0 4
+1283 32
+0 4
+1283 28
+0 8
+1283 8
+cfi=(4)
+cfn=(12)
+calls=4 12 
+* 144
+* 16
+
+fn=(376)
+406 99816
++1 24954
+cfn=(360) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).containsContext
+calls=12477 1219 
+* 18248004
+* 37431
+
+fn=(176) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).putContext
+1025 11760
++1 3528
+cfn=(178) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).getOrPutContext
+calls=1176 +73 
+* 7050100
+* 2352
++1 4704
+
+fn=(190) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).capacityForSize
+734 45
++1 63
+0 9
+735 72
+0 9
+735 27
+0 18
+735 9
++1 27
+cfi=(23)
+cfn=(192)
+calls=9 10656 
+* 900
+* 18
+0 9
+736 9
++1 36
+-1 27
+
+fn=(284) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).putContext
+1025 25872
++1 7056
+cfn=(286) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).getOrPutContext
+calls=2352 +73 
+* 4215638
+* 4704
++1 9408
+
+fn=(334) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).Metadata.isTombstone
+602 21710
++1 21710
+
+fn=(346) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).containsAdapted__anon_25447
+1222 559
++1 43
+cfn=(348) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).getIndex__anon_24888
+calls=43 965 
+* 45138
+* 258
+
+fn=(272) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).Metadata.takeFingerprint
+610 67604
++1 16901
++1 16901
++1 84505
+
+fn=(278) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).keys
+787 28512
++1 6336
+cfn=(248) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).header
+calls=3168 -5 
+* 69696
+* 12672
+
+fn=(196) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).grow
+1428 81
++2 54
++1 18
+cfn=(188) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).capacity
+calls=9 795 
+* 360
+* 63
+cfi=(6)
+cfn=(20)
+calls=9 553 
+* 144
+* 18
++1 9
+cfi=(23)
+cfn=(198)
+calls=9 1098 
+* 360
+* 27
+cfi=(6)
+cfn=(20)
+calls=9 553 
+* 144
+* 27
++2 54
++1 18
+cfn=(200) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).allocate
+calls=9 +25 
+* 21675
+* 27
+0 9
+1437 27
+cfi=(6)
+cfn=(182) debug.SafetyLock.lock
+calls=9 1709 
+* 270
+* 9
++1 18
+cfn=(246) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).initMetadatas
+calls=9 1282 
+* 1256
+* 9
++1 90
+0 18
+1439 54
++2 19
+0 18
+1454 18
++1 27
++1 18
+cfi=(10)
+cfn=(250) mem.swap__anon_25358
+calls=9 3575 
+* 234
+* 18
++1 18
+cfn=(252) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).deinit
+calls=9 728 
+* 11263
+* 36
+0 8
+1442 16
+cfn=(188)
+calls=8 795 
+* 344
+* 24
++2 32
++7 1
+0 16
+1444 72
+0 8
+1444 56
+0 40
+1445 16
+cfn=(278)
+calls=8 787 
+* 296
+* 88
+-1 8
+0 8
+1445 56
+0 40
+1446 16
+cfn=(280) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).values
+calls=8 791 
+* 296
+* 88
+-1 8
+0 8
+1446 56
+0 40
+1446 24
+0 16
+1446 40
++5 8
+0 2038
+1446 8152
+0 2030
+1451 6090
+0 8152
+1446 10190
++2 4076
+cfn=(326) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).Metadata.isUsed
+calls=2038 598 
+* 18342
+* 7742
+0 1628
+1449 4884
+cfn=(358) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).putAssumeCapacityNoClobberContext
+calls=1628 872 
+* 4291130
+* 1628
++1 6504
+-2 2038
++3 1620
+-1 1628
+
+fn=(294)
+795 115880
++1 34762
+0 11586
+798 23172
+cfn=(304) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).header
+calls=11586 -15 
+* 254892
+* 46344
+-2 11594
+
+fn=(304)
+783 65540
++1 65540
+0 16385
+784 65540
+0 16385
+784 131080
+
+fn=(186) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).load
+1288 99
++1 18
+cfn=(188)
+calls=9 795 
+* 360
+* 63
+0 27
+1289 45
++1 45
+cfi=(6)
+cfn=(20)
+calls=9 553 
+* 144
+* 18
++1 54
+0 9
+1291 27
+
+fn=(330) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).Metadata.isUsed
+598 33915
++1 27132
+
+fn=(104)
+170 3
++4 12
+
+fn=(316) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).Metadata.takeFingerprint
+610 9740
++1 2435
++1 2435
++1 12175
+
+fn=(324) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).values
+791 21582
++1 4796
+cfn=(304)
+calls=2398 -9 
+* 52756
+* 9592
+
+fn=(342) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).putAssumeCapacityNoClobberContext
+872 387
++1 86
+cfn=(344) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).containsContext
+calls=43 1219 
+* 46557
+* 172
+cfi=(6)
+cfn=(20)
+calls=43 553 
+* 688
+* 86
++2 43
+cfi=(9)
+cfn=(314)
+calls=43 27 
+* 38270
+* 129
++1 86
+cfn=(294)
+calls=43 -81 
+* 1849
+* 215
+0 129
+876 43
++1 129
++2 172
+0 43
+879 172
+0 86
+885 172
+cfi=(6)
+cfn=(20)
+calls=43 553 
+* 688
++1 430
+0 63
+880 189
+cfn=(330)
+calls=63 598 
+* 567
+* 169
++3 20
+-2 120
++2 43
+0 60
+881 60
++1 80
+0 20
+882 40
++1 20
+-1 20
+0 172
+886 43
++2 43
+cfn=(316)
+calls=43 610 
+* 473
+* 215
++1 129
+cfn=(320) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).Metadata.fill
+calls=43 616 
+* 903
+* 43
++1 86
+cfn=(322) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).keys
+calls=43 787 
+* 1591
+* 258
++1 86
+cfn=(324)
+calls=43 791 
+* 1591
+* 43
++2 430
+0 86
+893 172
+
+fn=(178)
+1099 10584
++1 3528
+cfn=(180) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).getOrPutContextAdapted__anon_24602
+calls=1176 +11 
+* 6992476
+* 9408
++1 4704
+0 2352
+1104 21168
+0 1176
+1102 4704
+
+fn=(248)
+783 178476
++1 178476
+0 44619
+784 178476
+0 44619
+784 356952
+
+fn=(326)
+598 198990
++1 159192
+
+fn=(174)
+322 9408
++1 3528
+cfn=(176)
+calls=1176 1025 
+* 7072444
+0 1176
+323 2352
+0 1176
+323 3528
+
+fn=(246)
+1282 54
++1 36
+0 18
+1283 27
+cfn=(188)
+calls=9 795 
+* 387
+* 63
+0 9
+1283 72
+0 9
+1283 63
+0 18
+1283 18
+cfi=(4)
+cfn=(12)
+calls=9 12 
+* 446
+* 36
+
+fn=(252)
+728 72
++1 27
+cfi=(6)
+cfn=(254) debug.SafetyLock.assertUnlocked
+calls=9 1721 
+* 216
+* 18
++1 18
+cfn=(256) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).deallocate
+calls=9 1494 
+* 10453
+* 9
++1 27
+cfi=(4)
+cfn=(12)
+calls=9 12 
+* 297
+* 126
+
+fn=(312) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).getOrPutAssumeCapacityAdapted__anon_24904
+1142 35280
++4 2352
+cfi=(9)
+cfn=(314)
+calls=2352 27 
+* 2105040
+* 7056
++2 4704
+cfn=(294)
+calls=2352 795 
+* 101136
+* 11760
+0 7056
+1148 7056
++1 2352
+cfn=(316)
+calls=2352 610 
+* 25872
+* 11760
++1 4704
+cfn=(294)
+calls=2352 795 
+* 101136
+* 11760
++1 7056
++2 4704
+cfn=(294)
+calls=2352 795 
+* 101136
+* 9408
++1 9408
+0 2352
+1154 9408
+0 49
+1177 196
+cfn=(294)
+calls=49 795 
+* 2107
+* 294
+0 6694
+1155 20082
+cfn=(318) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).Metadata.isFree
+calls=6694 606 
+* 66940
+* 20131
++20 4342
+0 6694
+1155 40164
+0 6645
+1156 19935
+cfn=(330)
+calls=6645 598 
+* 59805
+* 13290
++19 49
+-3 26052
+0 6645
+1156 17632
+0 6645
+1156 53160
+0 2303
+1157 4606
+cfn=(322)
+calls=2303 787 
+* 85211
+* 25333
++4 4606
+cfi=(9)
+cfn=(332)
+calls=2303 34 
+* 23030
+* 4606
+0 4342
+1168 17368
+cfn=(294)
+calls=4342 795 
+* 186706
+* 21710
+0 2303
+1164 4606
+cfn=(324)
+calls=2303 791 
+* 85211
+* 20727
+-2 20727
++7 4342
+0 4342
+1168 13026
+0 4342
+1168 13026
+cfn=(334)
+calls=4342 602 
+* 43420
+* 8684
++1 4342
+0 4342
+1172 4342
++1 26052
+0 13026
+1173 13026
++1 17368
+0 4342
+1174 8684
++1 4342
+-1 4342
++9 490
+-3 49
+0 196
+1183 49
++2 147
+cfn=(320)
+calls=49 616 
+* 1029
+* 49
++1 98
+cfn=(322)
+calls=49 787 
+* 1813
+* 343
++1 98
+cfn=(324)
+calls=49 791 
+* 1813
+* 245
++1 147
+cfi=(4)
+cfn=(12)
+calls=49 12 
+* 1519
+* 539
++2 490
+0 294
+1190 49
++2 588
+
+fn=(318)
+606 33770
++1 33770
+
+fn=(106)
+170 3
++4 12
+
+fn=(188)
+795 386330
++1 115897
+0 38631
+798 77262
+cfn=(248)
+calls=38631 -15 
+* 849882
+* 154524
+-2 38639
+
+fn=(256)
+1494 90
++1 26
+0 8
+1502 16
+cfn=(188)
+calls=8 795 
+* 344
+* 24
++1 48
+-8 11
+0 8
+1503 40
+0 16
+1503 8
++3 16
+cfi=(10)
+cfn=(202)
+calls=8 35133 
+* 1656
+* 32
++1 48
+0 16
+1507 40
+0 16
+1507 8
++2 16
+cfi=(10)
+cfn=(202)
+calls=8 35133 
+* 1656
+* 32
++1 48
+0 16
+1510 40
+0 16
+1510 8
++2 16
+cfi=(10)
+cfn=(202)
+calls=8 35133 
+* 1656
+* 24
++2 16
+cfn=(248)
+calls=8 783 
+* 176
+* 56
+0 8
+1514 56
+0 24
+1514 32
++1 16
+cfi=(24)
+cfn=(350)
+calls=8 422 
+* 4006
++2 16
++1 40
+-4 8
+
+fn=(310) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).deallocate
+1494 40
++1 11
+0 3
+1502 6
+cfn=(294)
+calls=3 795 
+* 129
+* 9
++1 18
+-8 6
+0 3
+1503 15
+0 6
+1503 3
++3 6
+cfi=(10)
+cfn=(202)
+calls=3 35133 
+* 621
+* 12
++1 18
+0 6
+1507 15
+0 6
+1507 3
++2 6
+cfi=(10)
+cfn=(202)
+calls=3 35133 
+* 621
+* 12
++1 18
+0 6
+1510 15
+0 6
+1510 3
++2 6
+cfi=(10)
+cfn=(202)
+calls=3 35133 
+* 621
+* 9
++2 6
+cfn=(304)
+calls=3 783 
+* 66
+* 21
+0 3
+1514 21
+0 9
+1514 12
++1 6
+cfi=(24)
+cfn=(350)
+calls=3 422 
+* 1165
++2 6
++1 15
+-4 3
+
+fn=(320)
+616 736
++1 368
++1 828
+
+fn=(360)
+1219 112840
++1 14105
+cfn=(362) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).containsAdapted__anon_24613
+calls=14105 +2 
+* 20172444
+* 42315
+
+fn=(184) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).growIfNeeded
+1294 10584
++1 3519
++1 4704
+0 9
+1296 36
+cfn=(186)
+calls=9 -8 
+* 909
+* 1221
+0 18
+1296 9
+cfn=(190)
+calls=9 734 
+* 1278
+* 45
+cfn=(196)
+calls=9 1428 
+* 4416109
+* 36
+
+fn=(200)
+1460 90
++4 9
++2 27
++1 18
+0 9
+1467 27
+0 9
+1467 45
+0 18
+1467 9
++3 18
+cfi=(10)
+cfn=(202)
+calls=9 35133 
+* 1863
+* 36
++1 54
+0 18
+1471 45
+0 18
+1471 9
++2 18
+cfi=(10)
+cfn=(202)
+calls=9 35133 
+* 1863
+* 36
++1 54
+0 18
+1474 45
+0 18
+1474 9
++2 18
+cfi=(10)
+cfn=(210) mem.Alignment.forward
+calls=9 62 
+* 315
+* 27
++2 27
+cfi=(24)
+cfn=(212)
+calls=9 994 
+* 16482
+* 63
++1 9
++2 36
++2 27
+0 27
+1483 18
++2 36
++3 72
+-5 9
+0 36
+1488 9
++2 18
++1 54
+-3 9
+
+fn=(260) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).getOrPutAssumeCapacityAdapted__anon_24875
+1142 16464
++4 1176
+cfi=(9)
+cfn=(262)
+calls=1176 12 
+* 1212456
+0 2352
+1146 1176
++2 2352
+cfn=(188)
+calls=1176 795 
+* 50568
+* 5880
+0 3528
+1148 3528
++1 1176
+cfn=(272)
+calls=1176 610 
+* 12936
+* 5880
++1 2352
+cfn=(188)
+calls=1176 795 
+* 50568
+* 5880
++1 3528
++2 2352
+cfn=(188)
+calls=1176 795 
+* 50568
+* 4704
++1 4704
+0 1176
+1154 4704
+0 1176
+1177 4704
+cfn=(188)
+calls=1176 795 
+* 50568
+* 7056
+0 5265
+1155 15795
+cfn=(274) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).Metadata.isFree
+calls=5265 606 
+* 52650
+* 16971
++20 4089
+0 5265
+1155 31590
+0 4089
+1156 12267
+cfn=(326)
+calls=4089 598 
+* 36801
+* 8178
++19 1176
+-3 24534
+0 4089
+1156 12242
+0 4089
+1156 32712
+0 25
+1157 50
+cfn=(278)
+calls=25 787 
+* 925
+* 200
++4 25
+cfi=(9)
+cfn=(366)
+calls=25 20 
+* 400
+* 75
+0 4064
+1168 16256
+cfn=(188)
+calls=4064 795 
+* 174752
+* 20320
+-6 50
++7 4064
+0 4064
+1168 12192
+0 4064
+1168 12192
+cfn=(328) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).Metadata.isTombstone
+calls=4064 602 
+* 40640
+* 8128
++1 4064
+0 4089
+1172 4089
++1 24534
+0 12267
+1173 12267
++1 16356
+0 4089
+1174 8178
++1 4089
+-1 4089
++9 11760
+-3 1176
+0 4704
+1183 1176
++2 3528
+cfn=(276) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).Metadata.fill
+calls=1176 616 
+* 24696
+* 1176
++1 2352
+cfn=(278)
+calls=1176 787 
+* 43512
+* 8232
++1 2352
+cfn=(280)
+calls=1176 791 
+* 43512
+* 5880
++1 3528
+cfi=(4)
+cfn=(12)
+calls=1176 12 
+* 29400
+* 12936
++2 11760
+0 7056
+1190 1176
++2 14112
+
+fn=(280)
+791 25308
++1 5624
+cfn=(248)
+calls=2812 -9 
+* 61864
+* 11248
+
+fn=(308) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).deinit
+728 32
++1 12
+cfi=(6)
+cfn=(254)
+calls=4 1721 
+* 96
+* 8
++1 8
+cfn=(310)
+calls=4 1494 
+* 3592
+* 4
++1 12
+cfi=(4)
+cfn=(12)
+calls=4 12 
+* 132
+* 56
+
+fn=(286)
+1099 23520
++1 7056
+cfn=(288) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).getOrPutContextAdapted__anon_24608
+calls=2352 +11 
+* 4104996
+* 18816
++1 11711
+0 4704
+1104 42336
+0 49
+1102 2450
+
+fn=(292)
+1288 44
++1 8
+cfn=(294)
+calls=4 795 
+* 145
+* 28
+0 12
+1289 20
++1 20
+cfi=(6)
+cfn=(20)
+calls=4 553 
+* 64
+* 8
++1 24
+0 4
+1291 12
+
+fn=(298)
+1428 36
++2 24
++1 8
+cfn=(294)
+calls=4 795 
+* 145
+* 28
+cfi=(6)
+cfn=(20)
+calls=4 553 
+* 64
+* 8
++1 4
+cfi=(23)
+cfn=(198)
+calls=4 1098 
+* 160
+* 12
+cfi=(6)
+cfn=(20)
+calls=4 553 
+* 64
+* 12
++2 24
++1 8
+cfn=(300) hash_map.HashMapUnmanaged(u32,void,05-1.KeyContext,80).allocate
+calls=4 +25 
+* 7660
+* 12
+0 4
+1437 12
+cfi=(6)
+cfn=(182)
+calls=4 1709 
+* 120
+* 4
++1 8
+cfn=(302)
+calls=4 1282 
+* 504
+* 4
++1 40
+0 8
+1439 24
++2 9
+0 8
+1454 8
++1 12
++1 8
+cfi=(10)
+cfn=(306) mem.swap__anon_25405
+calls=4 3575 
+* 104
+* 8
++1 8
+cfn=(308)
+calls=4 728 
+* 3952
+* 16
+0 3
+1442 6
+cfn=(294)
+calls=3 795 
+* 129
+* 9
++2 12
++7 1
+0 6
+1444 27
+0 3
+1444 21
+0 15
+1445 6
+cfn=(322)
+calls=3 787 
+* 111
+* 33
+-1 3
+0 3
+1445 21
+0 15
+1446 6
+cfn=(324)
+calls=3 791 
+* 111
+* 33
+-1 3
+0 3
+1446 21
+0 15
+1446 9
+0 6
+1446 15
++5 3
+0 55
+1446 220
+0 52
+1451 156
+0 220
+1446 330
++2 110
+cfn=(330)
+calls=55 598 
+* 495
+* 208
+0 86
+1449 86
+cfn=(342)
+calls=43 872 
+* 98467
+* 43
++1 169
+-2 55
++3 40
+-1 43
+
+fn=(296)
+734 20
++1 28
+0 4
+735 32
+0 4
+735 12
+0 8
+735 4
++1 12
+cfi=(23)
+cfn=(192)
+calls=4 10656 
+* 400
+* 8
+0 4
+736 4
++1 16
+-1 12
+
+fn=(362)
+1222 169260
++1 14105
+cfn=(364) hash_map.HashMapUnmanaged(struct { u32, u32 },void,05-1.Context,80).getIndex__anon_24857
+calls=14105 965 
+* 19904449
+* 84630
+
+fn=(364)
+965 197470
++1 42307
+0 28194
+975 14097
+cfi=(9)
+cfn=(262)
+calls=14097 12 
+* 14542117
+* 42291
++2 28194
+cfn=(188)
+calls=14097 795 
+* 606171
+* 70485
+0 16
+970 14153
+0 42291
+977 42291
++1 14097
+cfn=(272)
+calls=14097 610 
+* 155067
+* 70485
++2 28194
+cfn=(188)
+calls=14097 795 
+* 606171
+* 70485
++1 42291
++2 56388
+0 14097
+983 56388
+0 28038
+998 98133
+0 45456
+984 136368
+cfn=(274)
+calls=45456 606 
+* 454560
+* 150387
++12 31359
+0 45456
+984 272736
+0 31437
+985 94311
+cfn=(326)
+calls=31437 598 
+* 282933
+* 62874
++11 14019
+-3 188154
+0 31437
+985 93980
+0 31437
+985 251496
+0 331
+986 662
+cfn=(278)
+calls=331 787 
+* 12247
+* 2317
++2 331
+cfi=(9)
+cfn=(366)
+calls=331 20 
+* 5530
+* 915
++1 31359
+0 156
+989 1033
+0 31359
+993 31359
++1 188154
+0 94077
+994 94077
++1 125436
+0 31359
+995 62718
++1 31359
+-1 31359
+
+fn=(276)
+616 22432
++1 11216
++1 25236
+
+fn=(328)
+602 20320
++1 20320
+
+fn=(274)
+606 253605
++1 253605
+
+fn=(300)
+1460 40
++4 4
++2 12
++1 8
+0 4
+1467 12
+0 4
+1467 20
+0 8
+1467 4
++3 8
+cfi=(10)
+cfn=(202)
+calls=4 35133 
+* 828
+* 16
++1 24
+0 8
+1471 20
+0 8
+1471 4
++2 8
+cfi=(10)
+cfn=(202)
+calls=4 35133 
+* 828
+* 16
++1 24
+0 8
+1474 20
+0 8
+1474 4
++2 8
+cfi=(10)
+cfn=(210)
+calls=4 62 
+* 140
+* 12
++2 12
+cfi=(24)
+cfn=(212)
+calls=4 994 
+* 5352
+* 28
++1 4
++2 16
++2 12
+0 12
+1483 8
++2 16
++3 32
+-5 4
+0 16
+1488 4
++2 8
++1 24
+-3 4
+
+fn=(322)
+787 21582
++1 4796
+cfn=(304)
+calls=2398 -5 
+* 52756
+* 9592
+
+fn=(344)
+1219 387
++1 43
+cfn=(346)
+calls=43 +2 
+* 45998
+* 129
+
+fn=(282)
+322 21168
++1 7056
+cfn=(284)
+calls=2352 1025 
+* 4262678
+* 7056
+0 2352
+323 7056
+
+fn=(180)
+1111 12936
+0 3528
+1113 3528
+cfi=(6)
+cfn=(182)
+calls=1176 1709 
+* 35280
+0 2352
+1115 3528
+cfn=(184)
+calls=1176 1294 
+* 4438477
+* 3528
+0 1176
+1114 3528
+cfi=(6)
+cfn=(258) debug.SafetyLock.unlock
+calls=1176 1715 
+* 34104
+* 2352
++13 3528
+cfn=(260)
+calls=1176 +15 
+* 2419935
+* 23520
+-12 1176
+
+fn=(288)
+1111 35280
++2 7056
+cfi=(6)
+cfn=(182)
+calls=2352 1709 
+* 70560
+* 4704
++2 7056
+cfn=(290)
+calls=2352 1294 
+* 155639
+* 7056
+0 2352
+1114 7056
+cfi=(6)
+cfn=(258)
+calls=2352 1715 
+* 68208
+* 4704
++13 7056
+cfn=(312)
+calls=2352 +15 
+* 3678877
+* 47040
+-12 2352
+
+fn=(348)
+965 645
++1 126
+0 80
+975 40
+cfi=(9)
+cfn=(314)
+calls=40 27 
+* 35600
+* 120
++2 80
+cfn=(294)
+calls=40 795 
+* 1720
+* 200
+0 6
+970 61
+0 120
+977 120
++1 40
+cfn=(316)
+calls=40 610 
+* 440
+* 200
++2 80
+cfn=(294)
+calls=40 795 
+* 1720
+* 200
++1 120
++2 160
+0 40
+983 160
+0 80
+998 280
+0 60
+984 180
+cfn=(318)
+calls=60 606 
+* 600
+* 220
++12 20
+0 60
+984 360
+0 20
+985 60
+cfn=(330)
+calls=20 598 
+* 180
+* 40
++11 40
+-3 120
+0 20
+985 60
+0 20
+985 160
++4 20
+0 20
+993 20
++1 120
+0 60
+994 60
++1 80
+0 20
+995 40
++1 20
+-1 20
+
+fn=(358)
+872 13024
++1 3256
+cfn=(360)
+calls=1628 1219 
+* 2093700
+* 6512
+cfi=(6)
+cfn=(20)
+calls=1628 553 
+* 26048
+* 3256
++2 1628
+cfi=(9)
+cfn=(262)
+calls=1628 12 
+* 1686608
+* 4884
++1 3256
+cfn=(188)
+calls=1628 -81 
+* 70004
+* 8140
+0 4884
+876 1628
++1 4884
++2 6512
+0 1628
+879 6512
+0 3256
+885 6512
+cfi=(6)
+cfn=(20)
+calls=1628 553 
+* 26048
++1 16280
+0 2234
+880 6702
+cfn=(326)
+calls=2234 598 
+* 20106
+* 6096
++3 606
+-2 3636
++2 1628
+0 1818
+881 1818
++1 2424
+0 606
+882 1212
++1 606
+-1 606
+0 6512
+886 1628
++2 1628
+cfn=(272)
+calls=1628 610 
+* 17908
+* 8140
++1 4884
+cfn=(276)
+calls=1628 616 
+* 34188
+* 1628
++1 3256
+cfn=(278)
+calls=1628 787 
+* 60236
+* 11396
++1 3256
+cfn=(280)
+calls=1628 791 
+* 60236
+* 1628
++2 16280
+0 3256
+893 6512
+
+fl=(10)
+fn=(150) mem.TokenIterator(u8,.any).peek
+3049 42064
+0 5258
+3055 15774
++1 26101
+0 8962
+3051 48703
+0 8962
+3051 23182
+0 17546
+3051 26319
+cfn=(152) mem.TokenIterator(u8,.any).isDelimiter
+calls=8773 +32 
+* 483297
+* 60411
+0 7408
+3051 7408
+0 5069
+3061 10138
+0 378
+3057 5825
+0 5069
+3064 50690
+0 15207
+3062 87538
+0 15207
+3062 35483
+0 13842
+3062 41526
+cfn=(152)
+calls=13842 +21 
+* 792506
+* 111518
+0 10138
+3062 20276
+0 15207
+3064 30414
+0 10138
+3064 15207
+0 10138
+3064 20276
+
+fn=(204) mem.isValidAlignGeneric__anon_12214
+4576 3588
++1 1196
+0 598
+4577 1794
+0 1196
+4577 598
+cfi=(23)
+cfn=(206)
+calls=598 1098 
+* 23920
+* 1196
+
+fn=(210)
+62 130
++1 130
+-63 26
+63 13
++1 65
+-64 26
+64 65
+
+fn=(354)
+36 66
++1 11
+cfi=(23)
+cfn=(206)
+calls=11 1098 
+* 440
+* 33
+cfi=(6)
+cfn=(20)
+calls=11 553 
+* 176
+* 11
++1 44
+-38 11
+38 33
+
+fn=(60) mem.len__anon_24266
+1064 6
+fi=(35)
+632 2
+0 2
+fe=(10)
+1068 1
++2 1
+cfn=(62) mem.indexOfSentinel__anon_6658
+calls=1 +25 
+* 280
+* 3
+
+fn=(58)
+5697 6
+855 1
+cfn=(60)
+calls=1 1064 
+* 295
+* 2
+fi=(35)
+632 2
+0 1
+fe=(10)
+857 1
++1 5
+0 1
+858 7
+0 2
+858 9
+0 2
+858 4
+
+fn=(62)
+1095 8
++1 1
+fi=(6)
+1748 1
+cfi=(11)
+cfn=(64)
+calls=1 154 
+* 60
+* 4
+fe=(10)
+1148 1
+0 1
+1099 4
+0 1
+1099 6
+0 1
+1099 6
+0 1
+1101 6
++47 1
++9 4
+0 13
+1154 40
++2 12
+-1 72
++1 1
+0 12
+1155 12
++1 12
+
+fn=(202)
+35133 2980
+4436 298
+cfn=(204)
+calls=298 4576 
+* 16986
+* 894
+cfi=(6)
+cfn=(20)
+calls=298 553 
+* 4768
+* 298
++1 1490
+0 596
+4437 1490
+0 894
+4437 298
+cfn=(208) mem.alignBackward__anon_12215
+calls=298 36025 
+* 29800
+* 894
+
+fn=(236) mem.alignPointer__anon_25823
+32194 20
+4014 4
+cfn=(238) mem.alignPointerOffset__anon_25842
+calls=2 -33 
+* 222
+* 4
+0 4
+4014 2
++2 10
+-2 6
+0 2
+4016 8
+
+fn=(222)
+32 1428
++1 1632
+
+fn=(82) mem.indexOfScalarPos__anon_11375
+1261 19
++1 3
+0 2
+1264 1
+fi=(6)
+1748 1
+cfi=(11)
+cfn=(64)
+calls=1 154 
+* 60
+* 4
+fe=(10)
+1262 1
++51 1
++4 9
+0 1
+1266 4
+0 1
+1266 6
+0 1
+1266 6
+0 1
+1268 6
++45 1
+0 2
+1317 6
+0 2
+1317 3
+0 4
+1317 4
+0 2
+1320 8
+0 13
+1317 53
+0 12
+1319 36
+0 36
+1317 96
++2 1
+0 36
+1317 12
++1 36
++1 12
+-1 12
+
+fn=(266)
+32509 181185
+4067 108711
+
+fn=(80)
+1247 15
++1 4
+cfn=(82)
+calls=1 +13 
+* 514
+* 9
+
+fn=(352)
+34383 121
+4337 33
+0 22
+4341 77
+0 11
+4337 77
+0 11
+4341 55
+0 11
+4341 77
+0 22
+4341 44
+
+fn=(250)
+3575 45
++1 54
++1 54
++1 81
+
+fn=(146)
+17668 10920
+2257 10920
+
+fn=(240) mem.isValidAlign
+4570 8
++1 2
+cfn=(204)
+calls=2 +5 
+* 114
+* 6
+
+fn=(208)
+36025 2980
+4561 298
+cfn=(204)
+calls=298 +15 
+* 16986
+* 894
+cfi=(6)
+cfn=(20)
+calls=298 553 
+* 4768
+* 298
++4 1490
+0 596
+4565 1490
+
+fn=(306)
+3575 20
++1 24
++1 24
++1 36
+
+fn=(472)
+34383 2079
+4337 378
+0 189
+4337 378
+fi=(35)
+632 189
+fe=(10)
+4337 567
+fi=(33) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/meta.zig
+138 189
+0 567
+fe=(10)
+4337 567
+
+fn=(152)
+3083 248765
++4 135690
+0 67845
+3087 90460
++1 113075
+-1 22615
+0 15207
+3093 60828
+0 37822
+3088 166495
+0 15207
+3092 45621
+0 67845
+3088 45230
++1 60437
++3 30414
+0 7408
+3090 44839
+
+fn=(238)
+3981 28
++1 2
+cfn=(240)
+calls=2 4570 
+* 130
+* 6
+cfi=(6)
+cfn=(20)
+calls=2 553 
+* 32
+* 2
++8 4
+0 4
+3991 14
+
+fn=(148)
+3041 31548
++1 10516
+cfn=(150)
+calls=5258 +7 
+* 2103185
+* 21221
+0 20276
+3042 10138
++1 50690
+0 20276
+3042 5069
+0 378
+3042 756
+0 20276
+3043 5069
++1 15207
+
+fl=(22)
+fn=(496) fmt.formatType__anon_24695
+2466 1344
+503 224
+fi=(33)
+1086 224
+-29 224
++3 112
+0 448
+fe=(22)
+520 112
+cfn=(500) fmt.formatValue__anon_24934
+calls=112 725 
+* 63914
+* 336
+fi=(33)
+1087 112
+0 112
+fe=(22)
+520 336
+
+fn=(506) fmt.digits2
+1256 904
++4 791
+0 113
+1260 904
+0 339
+1260 678
+
+fn=(416) fmt.formatType__anon_24631
+2466 28
+503 4
+fi=(33)
+1086 4
+-29 4
++3 2
+0 2
+fe=(22)
+528 6
+fi=(33)
+1087 2
+0 10
+fe=(22)
+528 2
+cfn=(420) fmt.formatBuf__anon_6735
+calls=2 1032 
+* 654
+* 6
+0 8
+528 2
+0 2
+528 6
+
+fn=(530)
+88 8
++45 1
+0 1
+133 2
+cfi=(21)
+cfn=(132)
+calls=1 16 
+* 289
+* 4
+0 1
+133 4
+cfi=(21)
+cfn=(132)
+calls=1 16 
+* 289
+* 4
+0 3
+190 1
++3 4
+cfn=(496)
+calls=1 2466 
+* 676
+* 3
++12 1
++2 4
+
+fn=(158) fmt.parseIntWithGenericCharacter__anon_24293
+9645 91242
+1528 15207
+0 5069
+1529 15207
+-1 5069
+0 5069
+1530 15207
+0 5069
+1529 25345
+0 20276
+1531 15207
+cfn=(160) fmt.parseIntWithSign__anon_24490
+calls=5069 11237 
+* 2519293
+* 10138
+0 5069
+1530 25345
+0 10138
+1531 25345
+
+fn=(420)
+1032 2475
+0 1350
+1033 1575
++35 900
+0 675
+1068 450
+cfi=(21)
+cfn=(132)
+calls=225 16 
+* 65025
+0 225
+1068 900
+
+fn=(492)
+88 888
++45 111
+0 111
+133 222
+cfi=(21)
+cfn=(132)
+calls=111 16 
+* 32079
+* 444
+0 111
+133 444
+cfi=(21)
+cfn=(132)
+calls=111 16 
+* 32079
+* 444
+0 333
+190 111
++3 555
+cfn=(494) fmt.formatType__anon_24671
+calls=111 2466 
+* 41181
+* 333
++12 111
+0 111
+133 444
+cfi=(21)
+cfn=(132)
+calls=111 16 
+* 32079
+* 444
+0 333
+190 111
++3 444
+cfn=(496)
+calls=111 2466 
+* 66822
+* 333
++12 111
++2 444
+
+fn=(500)
+725 560
++4 112
+cfn=(502) fmt.formatIntValue__anon_25068
+calls=112 +11 
+* 62458
+0 112
+729 224
+0 112
+729 336
+
+fn=(160)
+11237 91242
+1601 15207
+0 15207
+1603 5069
++1 10138
++1 15207
+-4 5069
++36 5069
++2 35483
+-18 5069
++18 5069
++2 25345
+0 5069
+1639 20276
+0 5069
+1639 60828
+0 10138
+1639 10138
+0 10138
+1639 30414
+0 10138
+1656 40552
+0 15207
+1641 65897
+0 10138
+1654 30414
+0 20276
+1641 30414
++1 30414
++12 5069
+0 20276
+1643 30414
+cfi=(23)
+cfn=(162)
+calls=10138 9318 
+* 141932
+* 20276
+-1 10138
+0 20276
+1643 40552
+cfn=(164) fmt.charToDigit
+calls=10138 1770 
+* 496762
+* 91242
++1 25345
+0 20276
+1653 50690
+cfi=(23)
+cfn=(166)
+calls=10138 9318 
+* 152070
+* 20276
+0 5069
+1645 25345
+cfi=(23)
+cfn=(166)
+calls=5069 9318 
+* 76035
+* 10138
++1 5069
+0 15207
+1645 10138
+cfi=(23)
+cfn=(170)
+calls=5069 3372 
+* 136863
+* 45621
+0 30414
+1653 20276
+cfi=(23)
+cfn=(168)
+calls=10138 3423 
+* 263588
+* 81104
++1 10138
+
+fn=(164)
+1770 121656
++1 10138
+0 30414
+1775 10138
++3 30414
+0 10138
+1772 60828
+0 10138
+1771 70966
+0 20276
+1772 10138
+0 30414
+1780 70966
+-2 10138
+
+fn=(502)
+740 784
++4 112
++36 336
+cfn=(504) fmt.formatInt__anon_15376
+calls=112 1187 
+* 60442
+0 112
+780 224
+0 112
+780 336
+
+fn=(156)
+9552 81104
+1518 15207
+cfn=(158)
+calls=5069 9645 
+* 2813295
+* 10138
+0 10138
+1518 25345
+
+fn=(494)
+2466 1998
+503 222
+fi=(33)
+1086 222
+0 111
+fe=(22)
+654 333
+0 555
+658 555
+cfn=(420)
+calls=111 1032 
+* 36297
+* 333
+-3 111
+0 111
+658 333
+
+fn=(504)
+1187 1568
++1 448
+cfi=(6)
+cfn=(20)
+calls=112 553 
+* 1792
+0 112
+1190 112
++9 112
++3 112
++2 448
+cfi=(4)
+cfn=(12)
+calls=112 12 
+* 5152
+* 1456
++2 112
++1 112
++2 224
++37 784
+-37 112
++6 336
+-5 339
++1 6
+-1 112
+0 1
+1211 1
++1 16
+0 2
+1212 3
+cfn=(506)
+calls=1 +44 
+* 33
+* 3
+-2 6
++10 112
+-1 672
+0 112
+1219 112
++1 1456
+0 224
+1220 336
+cfn=(506)
+calls=112 +36 
+* 3696
+* 448
+0 112
+1246 560
+0 112
+1246 336
+0 560
+1246 560
+cfn=(420)
+calls=112 1032 
+* 36624
+* 448
+0 112
+1246 336
+
+fn=(414)
+88 18
+190 2
++3 6
+0 2
+193 2
+cfn=(416)
+calls=2 2466 
+* 742
+0 2
+193 6
+0 2
+133 8
+cfi=(21)
+cfn=(132)
+calls=2 16 
+* 578
+* 8
++72 2
++2 8
+
+fl=(4)
+fn=(12)
+12 55471
++3 110942
++6 110942
+-21 45774
+21 80426
+-21 79996
+21 1075
+-21 215
+19 4886
++2 280596
+-21 40018
+19 549124
++2 80036
++5 80202
+-5 46110
+-21 15370
+19 15370
++2 46110
+-2 147
++2 441
+-21 15370
+26 30740
+
+fl=(6)
+fn=(20)
+553 894176
++1 894176
+
+fn=(432) debug.unlockStdErr
+209 228
++1 114
+cfi=(28)
+cfn=(434)
+calls=114 583 
+* 18582
+* 228
+
+fn=(182)
+1709 17705
++2 14164
+cfn=(20)
+calls=3541 553 
+* 56656
++1 17705
+
+fn=(258)
+1715 17640
++2 10584
+cfn=(20)
+calls=3528 553 
+* 56448
++1 17640
+
+fn=(40) debug.attachSegfaultHandler
+1393 5
++10 2
+cfi=(7)
+cfn=(42)
+calls=1 5832 
+* 21
+* 1
++1 12
++2 2
+cfn=(46) debug.updateSegfaultHandler
+calls=1 -21 
+* 1560
+* 3
+
+fn=(46)
+1385 7
++1 4
+cfi=(7)
+cfn=(48)
+calls=1 5875 
+* 382
+* 2
++1 4
+cfi=(7)
+cfn=(48)
+calls=1 5875 
+* 382
+* 2
++1 4
+cfi=(7)
+cfn=(48)
+calls=1 5875 
+* 382
+* 2
++1 4
+cfi=(7)
+cfn=(48)
+calls=1 5875 
+* 382
+* 3
+
+fn=(526)
+215 7
++1 1
+cfn=(380) debug.lockStdErr
+calls=1 -11 
+* 246
+0 2
+218 1
+cfi=(20)
+cfn=(406)
+calls=1 45 
+* 21
+* 6
+cfi=(16)
+cfn=(410)
+calls=1 1592 
+* 7
+* 2
++1 2
+fi=(20)
++92 4
++28 4
++2 4
+-1 3
+0 1
+fe=(6)
+217 1
+cfn=(432)
+calls=1 -8 
+* 168
+* 3
+0 1
+219 2
+0 3
+fi=(20)
+312 6
+cfi=(21)
+cfn=(528)
+calls=1 23 
+* 1307
+* 11
+0 2
+312 6
+0 2
+312 3
+0 2
+312 2
+fe=(6)
+-93 1
+
+fn=(254)
+1721 26
++2 52
+cfn=(20)
+calls=13 553 
+* 208
+* 26
+
+fn=(38)
+1377 2
++2 1
+cfn=(40)
+calls=1 +14 
+* 1606
+* 2
+
+fn=(488)
+215 777
++1 111
+cfn=(380)
+calls=111 -11 
+* 27306
+0 222
+218 111
+cfi=(20)
+cfn=(406)
+calls=111 45 
+* 2331
+* 666
+cfi=(16)
+cfn=(410)
+calls=111 1592 
+* 777
+* 222
++1 222
+fi=(20)
++92 444
++28 444
++2 444
+-1 333
+0 111
+fe=(6)
+217 111
+cfn=(432)
+calls=111 -8 
+* 18648
+* 333
+0 111
+219 222
+0 333
+fi=(20)
+312 666
+cfi=(21)
+cfn=(490)
+calls=111 23 
+* 212565
+* 1221
+0 222
+312 666
+0 222
+312 333
+0 222
+312 222
+fe=(6)
+-93 111
+
+fn=(380)
+205 228
++1 114
+cfi=(28)
+cfn=(382)
+calls=114 578 
+* 27493
+* 228
+
+fn=(378)
+215 14
++1 2
+cfn=(380)
+calls=2 -11 
+* 511
+0 4
+218 2
+cfi=(20)
+cfn=(406)
+calls=2 45 
+* 42
+* 12
+cfi=(16)
+cfn=(410)
+calls=2 1592 
+* 14
+* 4
++1 4
+fi=(20)
++92 8
++28 8
++2 8
+-1 6
+0 2
+fe=(6)
+217 2
+cfn=(432)
+calls=2 -8 
+* 336
+* 6
+0 2
+219 4
+0 6
+fi=(20)
+312 12
+cfi=(21)
+cfn=(412)
+calls=2 23 
+* 1410
+* 22
+0 4
+312 12
+0 4
+312 6
+0 4
+312 4
+fe=(6)
+-93 2
+
+fl=(26)
+fn=(244)
+83 14
++1 6
++1 10
+
+fl=(25)
+fn=(226)
+116 24
++3 8
+cfi=(6)
+cfn=(20)
+calls=2 553 
+* 32
+* 6
++1 4
+cfn=(228) heap.PageAllocator.map
+calls=2 -96 
+* 1336
+* 6
+
+fn=(228)
+24 24
+-24 2
+25 2
++1 6
+-26 2
+27 4
+cfi=(10)
+cfn=(222)
+calls=2 +5 
+* 30
+* 16
++61 2
+cfi=(10)
+cfn=(202)
+calls=2 35133 
+* 414
+* 14
++1 16
+-63 2
+-26 6
+89 2
++1 10
+-90 6
+93 2
++1 6
++1 14
+cfi=(7)
+cfn=(230)
+calls=2 4817 
+* 316
+* 4
+-95 4
+90 4
+-90 4
+90 2
+-90 10
+102 8
++1 2
+cfi=(10)
+cfn=(236)
+calls=2 32194 
+* 282
+* 6
+-8 10
+-95 6
+103 4
++4 8
++1 6
+0 4
+103 2
+0 4
+109 10
+-1 2
+0 4
+109 2
++1 6
+0 4
+111 10
+-1 2
+0 4
+111 2
++1 16
++1 6
+-2 2
+
+fn=(514)
+137 42
++4 16
+0 6
+141 10
+cfn=(516) heap.PageAllocator.unmap
+calls=2 +3 
+* 654
+* 8
+
+fn=(516)
+144 20
+fi=(37) /home/skoffer/Languages/Zig/zig-x86_64-linux-0.15.0-dev.643+dc6ffc28b/lib/std/heap.zig
+-79 2
+fe=(25)
++86 6
+0 4
+150 4
+cfi=(10)
+cfn=(202)
+calls=2 35133 
+* 414
+* 6
++1 10
+0 2
+151 14
+0 6
+151 10
+cfi=(7)
+cfn=(518)
+calls=2 4852 
+* 152
+* 4
+
+fn=(338) heap.PageAllocator.realloc
+155 220
++1 88
+0 22
+156 88
+fi=(37)
+-91 11
+fe=(25)
++91 11
+0 22
+157 11
++1 22
+cfi=(10)
+cfn=(202)
+calls=11 35133 
+* 2277
+* 44
++22 22
+cfi=(10)
+cfn=(202)
+calls=11 35133 
+* 2277
+* 33
++1 26
+0 20
+186 36
+cfi=(7)
+cfn=(368)
+calls=4 4875 
+* 608
+* 8
+0 7
+182 25
+0 8
+186 8
++1 12
+-1 20
+
+fn=(336)
+123 231
++4 11
+cfn=(338)
+calls=11 +28 
+* 5926
+* 55
+
+fl=(19)
+fn=(110)
+641 8202
+113 8202
+
+fn=(138)
+61 221472
++1 41526
+-62 13842
+63 83052
+-1 13842
+-62 13842
+65 96894
+-2 13842
+-63 41526
+65 69210
++1 166104
+-66 27684
+66 41526
+-66 27684
+66 152262
+-66 27684
+66 83052
+-66 13842
+66 55368
+-66 55368
+66 41526
+-66 41526
+66 166104
+-66 41526
+66 13842
+cfi=(5)
+cfn=(14)
+calls=13842 -29 
+* 262998
+* 13842
++1 124578
+-1 13842
+-66 41526
+67 13842
++2 41526
+-69 41526
+71 124578
+-2 13842
+
+fn=(142)
+102 10936
++1 12303
+0 2734
+103 8202
+0 1367
+103 5468
+0 2734
+103 5468
+
+fn=(112)
+39 6835
++1 5468
+
+fl=(13)
+fn=(74)
+802 4
+cfi=(14)
+cfn=(76)
+calls=1 49 
+* 24
+* 17
++32 2
+cfi=(7)
+cfn=(78)
+calls=1 7599 
+* 1701
+* 7
+cfi=(5)
+cfn=(14)
+calls=1 37 
+* 375
+* 4
+cfi=(5)
+cfn=(14)
+calls=1 37 
+* 375
+* 2
++1 4
+cfn=(86) fs.Dir.openFileZ
+calls=1 +4 
+* 269
+* 2
+0 2
+835 5
+
+fn=(86)
+839 12
++20 6
+0 1
+859 2
+0 5
+859 66
++7 13
++2 14
++4 1
++16 6
+cfi=(7)
+cfn=(88)
+calls=1 1815 
+* 118
+* 3
+0 2
+859 1
+0 1
+888 3
++3 4
+0 2
+921 4
+-27 1
+0 1
+921 3
+
+fl=(34)
+fn=(454) array_list.ArrayListAligned(u32,null).ensureTotalCapacity
+441 24453
++6 5623
+0 567
+449 378
+cfn=(456) array_list.ArrayListAlignedUnmanaged(u32,null).growCapacity
+calls=189 1222 
+* 5670
+* 567
++1 378
+cfn=(458) array_list.ArrayListAligned(u32,null).ensureTotalCapacityPrecise
+calls=189 +6 
+* 176978
+* 567
+-3 10301
+0 189
+450 567
+
+fn=(452) array_list.ArrayListAligned(u32,null).addOne
+497 21736
++2 19019
+0 5434
+499 2717
++1 5434
+cfn=(454)
+calls=2717 -59 
+* 226238
+* 8151
+0 2717
+501 5434
+cfn=(478) array_list.ArrayListAligned(u32,null).addOneAssumeCapacity
+calls=2717 +7 
+* 187473
+* 32604
+
+fn=(450)
+260 27170
++1 8151
+cfn=(452)
+calls=2717 497 
+* 516957
+* 5434
+0 2717
+261 5434
++1 13585
+
+fn=(456)
+1222 1323
++1 189
++2 1701
+0 567
+1225 756
++1 378
++1 756
+
+fn=(458)
+456 1701
++6 567
+0 189
+469 378
+cfn=(460) array_list.ArrayListAligned(u32,null).allocatedSlice
+calls=189 569 
+* 9828
+* 1701
++1 567
+cfi=(24)
+cfn=(462)
+calls=189 1590 
+* 5859
+* 945
+-8 189
++16 756
+0 378
+474 756
+cfi=(24)
+cfn=(464)
+calls=189 994 
+* 124247
+* 378
+0 189
+474 1512
++1 1701
+0 378
+475 1134
+0 189
+475 756
+0 945
+475 1134
+0 567
+475 2835
+0 567
+475 378
+cfi=(5)
+cfn=(14)
+calls=189 37 
+* 2079
+* 567
++1 567
+cfi=(24)
+cfn=(470)
+calls=189 -54 
+* 11529
+* 378
++1 378
++1 567
+-3 189
+
+fn=(460)
+569 1512
+cfi=(5)
+cfn=(14)
+calls=189 37 
+* 4158
+* 189
++2 1323
+0 189
+571 1323
+0 378
+571 756
+
+fn=(478)
+508 19019
++1 16302
+cfi=(6)
+cfn=(20)
+calls=2717 +44 
+* 43472
++1 27170
+0 8151
+510 2717
++1 24453
+0 8151
+511 16302
+0 5434
+511 16302
+
+fn=(448)
+53 1134
++1 1890
+cfi=(5)
+cfn=(14)
+calls=189 -17 
+* 4158
+* 756
+
+fl=(8)
+fn=(28) os.linux.prlimit
+2449 20
++1 8
+cfi=(3)
+cfn=(30)
+calls=2 57 
+* 38
+* 6
+
+fn=(36)
+2444 7
++2 4
+cfn=(28)
+calls=1 +3 
+* 36
+* 3
+
+fn=(126)
+1021 121672
++1 60836
+cfi=(3)
+cfn=(128)
+calls=15209 46 
+* 258553
+* 45627
+
+fn=(232)
+926 30
++26 4
+-2 8
+cfi=(3)
+cfn=(234)
+calls=2 90 
+* 42
+-10 6
+
+fn=(50)
+1753 55
++1 20
+cfi=(6)
+cfn=(20)
+calls=5 553 
+* 80
+* 10
++1 20
+cfi=(6)
+cfn=(20)
+calls=5 553 
+* 80
+* 10
++1 20
+cfi=(6)
+cfn=(20)
+calls=5 553 
+* 80
+* 10
++1 20
+cfi=(6)
+cfn=(20)
+calls=5 553 
+* 80
++2 20
+cfi=(4)
+cfn=(12)
+calls=5 12 
+* 185
+* 55
++1 20
+cfi=(4)
+cfn=(12)
+calls=5 12 
+* 185
+* 60
++3 10
+0 5
+1775 10
+0 5
+1763 5
++3 21
+0 10
+1766 5
++2 5
++1 10
++2 70
+-5 15
+0 15
+1775 5
++1 15
+-1 15
+0 20
+1776 5
++5 25
+cfi=(3)
+cfn=(30)
+calls=5 57 
+* 95
+* 20
++2 5
+cfn=(52) os.linux.errnoFromSyscall
+calls=5 579 
+* 165
+* 15
+-7 15
+0 5
+1785 15
+-2 5
++8 20
+-3 5
+
+fn=(52)
+579 30
++1 5
++1 10
+0 10
+581 5
++1 10
+0 5
+581 15
+0 5
+581 35
+0 5
+582 10
+0 5
+582 15
+
+fn=(90)
+1306 10
++2 5
+cfi=(3)
+cfn=(30)
+calls=1 57 
+* 19
+* 3
+
+fn=(44)
+1822 6
++1 8
+
+fn=(520)
+992 14
++1 4
+cfi=(3)
+cfn=(522)
+calls=2 36 
+* 28
+* 6
+
+fn=(544)
+1377 5
++1 3
+
+fn=(26)
+2439 7
++2 4
+cfn=(28)
+calls=1 +8 
+* 36
+* 3
+
+fn=(370)
+966 56
++3 8
+-2 12
+cfi=(3)
+cfn=(372)
+calls=4 69 
+* 80
+* 12
+
+fn=(390)
+1745 2
++1 2
+cfi=(3)
+cfn=(392)
+calls=1 19 
+* 9
+* 2
+
+fn=(428)
+1174 4496
++1 1686
+cfi=(3)
+cfn=(128)
+calls=562 46 
+* 9554
+* 1686
+
+fn=(538)
+1321 4
++1 3
+cfi=(3)
+cfn=(540)
+calls=1 27 
+* 11
+* 3
+
+fl=(29)
+fn=(384)
+49 798
++1 114
+cfi=(30)
+cfn=(386)
+calls=114 375 
+* 2299
+* 342
++1 342
++5 912
+-56 114
+52 342
+cfi=(31)
+cfn=(394)
+calls=114 -19 
+* 15276
+* 228
++1 570
+cfi=(6)
+cfn=(20)
+calls=114 553 
+* 1824
+* 114
++1 342
+-54 228
+56 456
+
+fn=(436)
+63 798
++1 912
+-64 342
+64 114
++1 228
++2 342
+-67 114
+66 228
++1 342
+cfi=(31)
+cfn=(438)
+calls=114 -28 
+* 14364
+* 114
+
+totals: 47512390

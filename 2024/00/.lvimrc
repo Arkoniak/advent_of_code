@@ -1,0 +1,6 @@
+nnoremap <leader>d :make run1<cr>
+nnoremap <leader>r :make run1 -- input.txt<cr>
+nnoremap <leader>t :make test1<cr>
+" nnoremap <leader>d :make run2<cr>
+" nnoremap <leader>r :make run2 -- input.txt<cr>
+" nnoremap <leader>t :make test2<cr>
